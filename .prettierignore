@@ -1,0 +1,14 @@
+node_modules
+dist
+.wrangler
+coverage
+package-lock.json
+docs
+CLAUDE.md
+LEEME.md
+packages/catalog/catalogo.json
+packages/catalog/test/muestras
+packages/catalog/bonos.json
+apps/api/test/muestras
+apps/api/lista-seguimiento.json
+apps/web/src/datos

@@ -1,0 +1,22 @@
+{
+  "name": "@gremio/catalog",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Genera catalogo.json a partir de ao-bin-dumps.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./catalogo.json": "./catalogo.json",
+    "./bonos.json": "./bonos.json"
+  },
+  "dependencies": {
+    "@gremio/core": "*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
+  },
+  "scripts": {
+    "generar": "tsx src/generar.ts"
+  }
+}

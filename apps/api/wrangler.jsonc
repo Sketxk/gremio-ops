@@ -1,0 +1,28 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "gremio-ops",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-20",
+  // El frontend se sirve como archivos estáticos (no cuentan contra el límite de peticiones);
+  // solo /api/* pasa por el código del Worker.
+  "assets": {
+    "directory": "../web/dist",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"],
+  },
+  // Cron de precios cada 5 minutos, una porción por corrida (288 escrituras a KV al día, límite
+  // gratuito: 1,000). Si cambias el intervalo, cambia también INTERVALO_CRON_MS en src/cron.ts.
+  "triggers": {
+    "crons": ["*/5 * * * *"],
+  },
+  // Registra CPU y logs de cada invocación en el panel de Cloudflare (incluido en el plan gratuito).
+  "observability": {
+    "enabled": true,
+  },
+  "kv_namespaces": [
+    {
+      "binding": "PRECIOS",
+      "id": "7caf9b437b524880aff6c838b204142c",
+    },
+  ],
+}

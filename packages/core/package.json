@@ -1,0 +1,10 @@
+{
+  "name": "@gremio/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Fórmulas puras del juego (comisiones, RRR, crafteo, riesgo). Sin dependencias.",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

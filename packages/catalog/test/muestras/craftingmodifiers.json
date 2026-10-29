@@ -1,0 +1,147 @@
+{
+ "?xml": {
+  "@version": "1.0",
+  "@encoding": "utf-8"
+ },
+ "craftingmodifiers": {
+  "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+  "@xsi:noNamespaceSchemaLocation": "craftingmodifiers.xsd",
+  "refiningcategory": {
+   "item": [
+    {
+     "@category": "fiber"
+    },
+    {
+     "@category": "ore"
+    },
+    {
+     "@category": "rock"
+    },
+    {
+     "@category": "wood"
+    },
+    {
+     "@category": "hide"
+    }
+   ]
+  },
+  "craftinglocation": [
+   {
+    "@clusterid": "1000",
+    "refiningbonus": {
+     "@value": "0.18",
+     "@islandvalue": "0"
+    },
+    "craftingbonus": {
+     "@value": "0.18",
+     "@islandvalue": "0"
+    },
+    "craftingmodifier": [
+     {
+      "@name": "fiber",
+      "@value": "0.40"
+     },
+     {
+      "@name": "meat_goose",
+      "@value": "0.10"
+     },
+     {
+      "@name": "sword",
+      "@value": "0.15"
+     },
+     {
+      "@name": "bow",
+      "@value": "0.15"
+     },
+     {
+      "@name": "arcanestaff",
+      "@value": "0.15"
+     },
+     {
+      "@name": "leather_helmet",
+      "@value": "0.15"
+     },
+     {
+      "@name": "leather_shoes",
+      "@value": "0.15"
+     }
+    ]
+   },
+   {
+    "@clusterid": "4000",
+    "refiningbonus": {
+     "@value": "0.18",
+     "@islandvalue": "0"
+    },
+    "craftingbonus": {
+     "@value": "0.18",
+     "@islandvalue": "0"
+    },
+    "craftingmodifier": [
+     {
+      "@name": "wood",
+      "@value": "0.40"
+     },
+     {
+      "@name": "meat_chicken",
+      "@value": "0.10"
+     },
+     {
+      "@name": "meat_sheep",
+      "@value": "0.10"
+     },
+     {
+      "@name": "hammer",
+      "@value": "0.15"
+     },
+     {
+      "@name": "spear",
+      "@value": "0.15"
+     },
+     {
+      "@name": "holystaff",
+      "@value": "0.15"
+     },
+     {
+      "@name": "plate_helmet",
+      "@value": "0.15"
+     },
+     {
+      "@name": "cloth_armor",
+      "@value": "0.15"
+     }
+    ]
+   },
+   {
+    "@continent": "OUTLANDS",
+    "@biome": "SWAMP",
+    "@clusterquality": "Q1",
+    "refiningbonus": {
+     "@value": "0.15"
+    },
+    "craftingmodifier": [
+     {
+      "@name": "mace",
+      "@value": "0.01"
+     },
+     {
+      "@name": "naturestaff",
+      "@value": "0.01"
+     },
+     {
+      "@name": "firestaff",
+      "@value": "0.01"
+     },
+     {
+      "@name": "leather_armor",
+      "@value": "0.01"
+     },
+     {
+      "@name": "cloth_helmet",
+      "@value": "0.01"
+     }
+    ]
+   }
+  ]
+ }
+}

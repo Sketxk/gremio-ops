@@ -1,0 +1,669 @@
+{
+ "items": {
+  "shopcategories": {
+   "shopcategory": []
+  },
+  "simpleitem": [
+   {
+    "@uniquename": "T4_PLANKS",
+    "@shopcategory": "crafting",
+    "@shopsubcategory1": "refinedresources",
+    "@craftingcategory": "wood",
+    "@tier": "4",
+    "@weight": "0.51",
+    "@maxstacksize": "999",
+    "@uicraftsoundstart": "Play_ui_action_craft_refine_wood_start",
+    "@uicraftsoundfinish": "Play_ui_action_craft_refine_wood_finish",
+    "@fasttravelfactor": "2",
+    "@itemvalue": "16",
+    "@enchantmentlevel": "0",
+    "@descriptionlocatag": "@ITEMS_REFINED_RESOURCE_DESC",
+    "@shopsubcategory2": "planks",
+    "craftingrequirements": [
+     {
+      "@silver": "0",
+      "@time": "0.04167",
+      "@craftingfocus": "54",
+      "@amountcrafted": "1",
+      "@craftbuttonlocaoverride": "@CRAFTBUILDING_ITEM_DETAILS_BUTTON_REFINE",
+      "craftresource": [
+       {
+        "@uniquename": "T4_WOOD",
+        "@count": "2",
+        "@enchantmentlevel": "0"
+       },
+       {
+        "@uniquename": "T3_PLANKS",
+        "@count": "1",
+        "@enchantmentlevel": "0"
+       }
+      ]
+     },
+     {
+      "@silver": "0",
+      "@time": "0.04167",
+      "@craftingfocus": "54",
+      "@amountcrafted": "1",
+      "@craftbuttonlocaoverride": "@CRAFTBUILDING_ITEM_DETAILS_BUTTON_REFINE",
+      "craftresource": [
+       {
+        "@uniquename": "T4_WOOD",
+        "@count": "1",
+        "@enchantmentlevel": "0"
+       },
+       {
+        "@uniquename": "T1_FACTION_FOREST_TOKEN_1",
+        "@count": "1"
+       },
+       {
+        "@uniquename": "T3_PLANKS",
+        "@count": "1",
+        "@enchantmentlevel": "0"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "@uniquename": "T4_PLANKS_LEVEL1",
+    "@shopcategory": "crafting",
+    "@shopsubcategory1": "refinedresources",
+    "@craftingcategory": "wood",
+    "@tier": "4",
+    "@enchantmentlevel": "1",
+    "@weight": "0.51",
+    "@maxstacksize": "999",
+    "@uicraftsoundstart": "Play_ui_action_craft_refine_wood_start",
+    "@uicraftsoundfinish": "Play_ui_action_craft_refine_wood_finish",
+    "@fasttravelfactor": "4",
+    "@itemvalue": "32",
+    "@famevalue": "45",
+    "@descriptionlocatag": "@ITEMS_REFINED_RESOURCE_DESC",
+    "@shopsubcategory2": "planks",
+    "craftingrequirements": [
+     {
+      "@silver": "0",
+      "@time": "0.0625",
+      "@craftingfocus": "94",
+      "@amountcrafted": "1",
+      "@craftbuttonlocaoverride": "@CRAFTBUILDING_ITEM_DETAILS_BUTTON_REFINE",
+      "craftresource": [
+       {
+        "@uniquename": "T4_WOOD_LEVEL1",
+        "@enchantmentlevel": "1",
+        "@count": "2"
+       },
+       {
+        "@uniquename": "T3_PLANKS",
+        "@count": "1",
+        "@enchantmentlevel": "0"
+       }
+      ]
+     },
+     {
+      "@silver": "0",
+      "@time": "0.0625",
+      "@craftingfocus": "94",
+      "@amountcrafted": "1",
+      "@craftbuttonlocaoverride": "@CRAFTBUILDING_ITEM_DETAILS_BUTTON_REFINE",
+      "craftresource": [
+       {
+        "@uniquename": "T4_WOOD_LEVEL1",
+        "@enchantmentlevel": "1",
+        "@count": "1"
+       },
+       {
+        "@uniquename": "T1_FACTION_FOREST_TOKEN_1",
+        "@count": "1"
+       },
+       {
+        "@uniquename": "T3_PLANKS",
+        "@count": "1",
+        "@enchantmentlevel": "0"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "weapon": [
+   {
+    "@uniquename": "T4_2H_LONGBOW",
+    "@maxqualitylevel": "5",
+    "@abilitypower": "120",
+    "@physicalspelldamagebonus": "0",
+    "@magicspelldamagebonus": "0",
+    "@slottype": "mainhand",
+    "@shopcategory": "weapons",
+    "@shopsubcategory1": "bow",
+    "@attacktype": "ranged",
+    "@mainhandanimationtype": "bow",
+    "@attackdamage": "23",
+    "@attackspeed": "1.3",
+    "@twohanded": "true",
+    "@attackrange": "13",
+    "@tier": "4",
+    "@weight": "6.8",
+    "@activespellslots": "3",
+    "@passivespellslots": "1",
+    "@durability": "12706",
+    "@durabilityloss_attack": "1",
+    "@durabilityloss_spelluse": "1",
+    "@durabilityloss_receivedattack": "1",
+    "@durabilityloss_receivedspell": "1",
+    "@fxbonename": "LeftArm_3",
+    "@fxboneoffset": "0.2 -0.227 0.135",
+    "@unlockedtocraft": "false",
+    "@unlockedtoequip": "false",
+    "@hitpointsmax": "0",
+    "@itempower": "700",
+    "@hitpointsregenerationbonus": "0",
+    "@itempowerprogressiontype": "mainhand",
+    "@focusfireprotectionpenetration": "0",
+    "@uicraftsoundstart": "Play_ui_action_craft_wood_start",
+    "@uicraftsoundfinish": "Play_ui_action_craft_wood_finish",
+    "@craftingcategory": "bow",
+    "@healmodifier": "0",
+    "@canbeovercharged": "true",
+    "@masterymodifier": "0",
+    "@combatspecachievement": "COMBAT_BOWS_LONG",
+    "@physicalattackdamagebonus": "0",
+    "@magicattackdamagebonus": "0",
+    "@shopsubcategory2": "bow_longbow",
+    "attackvariations": {
+     "@attackchaintime": "1.5",
+     "attack": [
+      {
+       "@attackdamagefactor": "1",
+       "@attackspeedfactor": "1",
+       "@attackdamagetimefactor": "1",
+       "@attacktype": "ranged"
+      },
+      {
+       "@attackdamagefactor": "1",
+       "@attackspeedfactor": "1",
+       "@attackdamagetimefactor": "1",
+       "@attacktype": "ranged"
+      },
+      {
+       "@attackdamagefactor": "1",
+       "@attackspeedfactor": "1",
+       "@attackdamagetimefactor": "1",
+       "@attacktype": "ranged"
+      }
+     ]
+    },
+    "projectile": {
+     "@prefab": "FX/ClientPrefabs/fx_attack_bow_arrow",
+     "@startsocket": "mainhandprojectile",
+     "@hitsocket": "damage",
+     "@flyspeed": "30",
+     "impactvfx": {
+      "@prefab": "FX/ClientPrefabs/fx_attack_bow_arrow_impact",
+      "@impactsocket": "damage"
+     },
+     "AudioInfo": {
+      "@name": "PROJECTILEHIT_WEAPON_IMPACT"
+     }
+    },
+    "SocketPreset": {
+     "@name": "ITEM_2H_BOW"
+    },
+    "craftingrequirements": {
+     "@silver": "0",
+     "@time": "1.333",
+     "@craftingfocus": "1715",
+     "craftresource": {
+      "@uniquename": "T4_PLANKS",
+      "@count": "32"
+     }
+    },
+    "craftingspelllist": {
+     "@reference": "T4_2H_BOW",
+     "removespell": {
+      "@uniquename": "SPEEDARCHER_KITE"
+     },
+     "craftspell": {
+      "@uniquename": "ARROWRAIN",
+      "@slots": "3",
+      "@tag": "A"
+     }
+    },
+    "AudioInfo": {
+     "@name": "ITEM_BOW_LONG"
+    },
+    "enchantments": {
+     "enchantment": [
+      {
+       "@enchantmentlevel": "1",
+       "@itempower": "800",
+       "@durability": "19059",
+       "craftingrequirements": {
+        "@silver": "0",
+        "@time": "2",
+        "@craftingfocus": "3001",
+        "craftresource": {
+         "@uniquename": "T4_PLANKS_LEVEL1",
+         "@enchantmentlevel": "1",
+         "@count": "32"
+        }
+       },
+       "upgraderequirements": {
+        "upgraderesource": {
+         "@uniquename": "T4_RUNE",
+         "@count": "384"
+        }
+       }
+      },
+      {
+       "@enchantmentlevel": "2",
+       "@itempower": "900",
+       "@durability": "28589",
+       "craftingrequirements": {
+        "@silver": "0",
+        "@time": "2.667",
+        "@craftingfocus": "5252",
+        "craftresource": {
+         "@uniquename": "T4_PLANKS_LEVEL2",
+         "@enchantmentlevel": "2",
+         "@count": "32"
+        }
+       },
+       "upgraderequirements": {
+        "upgraderesource": {
+         "@uniquename": "T4_SOUL",
+         "@count": "384"
+        }
+       }
+      },
+      {
+       "@enchantmentlevel": "3",
+       "@itempower": "1000",
+       "@durability": "42883",
+       "craftingrequirements": {
+        "@silver": "0",
+        "@time": "3.333",
+        "@craftingfocus": "9191",
+        "craftresource": {
+         "@uniquename": "T4_PLANKS_LEVEL3",
+         "@enchantmentlevel": "3",
+         "@count": "32"
+        }
+       },
+       "upgraderequirements": {
+        "upgraderesource": {
+         "@uniquename": "T4_RELIC",
+         "@count": "384"
+        }
+       }
+      },
+      {
+       "@enchantmentlevel": "4",
+       "@itempower": "1100",
+       "@durability": "64324",
+       "craftingrequirements": {
+        "@silver": "0",
+        "@time": "5",
+        "@craftingfocus": "16085",
+        "craftresource": {
+         "@uniquename": "T4_PLANKS_LEVEL4",
+         "@enchantmentlevel": "4",
+         "@count": "32"
+        }
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "equipmentitem": [
+   {
+    "@uniquename": "T4_OFF_TOWERSHIELD_UNDEAD",
+    "@uisprite": "OFF_TOWERSHIELD",
+    "@maxqualitylevel": "5",
+    "@abilitypower": "100",
+    "@slottype": "offhand",
+    "@shopcategory": "offhands",
+    "@shopsubcategory1": "shieldtype",
+    "@tier": "4",
+    "@weight": "1.7",
+    "@activespellslots": "0",
+    "@passivespellslots": "0",
+    "@physicalarmor": "0",
+    "@magicresistance": "0",
+    "@durability": "10800",
+    "@durabilityloss_attack": "0.8",
+    "@durabilityloss_spelluse": "1",
+    "@durabilityloss_receivedattack": "1",
+    "@durabilityloss_receivedspell": "1",
+    "@offhandanimationtype": "shield",
+    "@hitpointsmax": "0",
+    "@hitpointsregenerationbonus": "0",
+    "@energymax": "0",
+    "@energyregenerationbonus": "0",
+    "@crowdcontrolresistance": "0",
+    "@unlockedtocraft": "false",
+    "@unlockedtoequip": "false",
+    "@physicalspelldamagebonus": "0",
+    "@magicspelldamagebonus": "0",
+    "@healbonus": "0",
+    "@itempower": "725",
+    "@physicalattackdamagebonus": "0",
+    "@magicattackdamagebonus": "0",
+    "@bonusccdurationvsplayers": "0",
+    "@bonusccdurationvsmobs": "0",
+    "@threatbonus": "0.04",
+    "@itempowerprogressiontype": "towershield",
+    "@magiccooldownreduction": "0",
+    "@bonusdefensevsplayers": "0.0135",
+    "@bonusdefensevsmobs": "0.0135",
+    "@magiccasttimereduction": "0",
+    "@attackspeedbonus": "0",
+    "@movespeedbonus": "0",
+    "@uicraftsoundstart": "Play_ui_action_craft_metal_start",
+    "@uicraftsoundfinish": "Play_ui_action_craft_metal_finish",
+    "@healmodifier": "0",
+    "@craftingcategory": "offhand",
+    "@canbeovercharged": "true",
+    "@showinmarketplace": "true",
+    "@energycostreduction": "0",
+    "@masterymodifier": "0",
+    "@destinyandjournalcraftfamefactor": "1.1",
+    "@combatspecachievement": "COMBAT_SHIELDS_UNDEAD",
+    "@shopsubcategory2": "shieldtype_undead",
+    "craftingrequirements": [
+     {
+      "@silver": "0",
+      "@time": "0.333",
+      "@craftingfocus": "429",
+      "craftresource": [
+       {
+        "@uniquename": "T4_PLANKS",
+        "@count": "4"
+       },
+       {
+        "@uniquename": "T4_METALBAR",
+        "@count": "4"
+       },
+       {
+        "@uniquename": "T4_ARTEFACT_OFF_TOWERSHIELD_UNDEAD",
+        "@count": "1",
+        "@maxreturnamount": "0"
+       }
+      ]
+     },
+     {
+      "@time": "0.333",
+      "@craftingfocus": "429",
+      "craftresource": [
+       {
+        "@uniquename": "T4_PLANKS",
+        "@count": "4"
+       },
+       {
+        "@uniquename": "T4_METALBAR",
+        "@count": "4"
+       },
+       {
+        "@uniquename": "T4_ARTEFACT_TOKEN_FAVOR_1",
+        "@count": "1",
+        "@maxreturnamount": "0"
+       }
+      ]
+     }
+    ],
+    "SocketPreset": {
+     "@name": "OFF_TOWERSHIELD"
+    },
+    "enchantments": {
+     "enchantment": [
+      {
+       "@enchantmentlevel": "1",
+       "@itempower": "825",
+       "@durability": "16200",
+       "craftingrequirements": [
+        {
+         "@silver": "0",
+         "@time": "0.5",
+         "@craftingfocus": "750",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL1",
+           "@enchantmentlevel": "1",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL1",
+           "@enchantmentlevel": "1",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_OFF_TOWERSHIELD_UNDEAD",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        },
+        {
+         "@silver": "0",
+         "@time": "0.5",
+         "@craftingfocus": "750",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL1",
+           "@enchantmentlevel": "1",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL1",
+           "@enchantmentlevel": "1",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_TOKEN_FAVOR_1",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        }
+       ],
+       "upgraderequirements": {
+        "upgraderesource": {
+         "@uniquename": "T4_RUNE",
+         "@count": "96"
+        }
+       }
+      },
+      {
+       "@enchantmentlevel": "2",
+       "@itempower": "925",
+       "@durability": "24300",
+       "craftingrequirements": [
+        {
+         "@silver": "0",
+         "@time": "0.667",
+         "@craftingfocus": "1313",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL2",
+           "@enchantmentlevel": "2",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL2",
+           "@enchantmentlevel": "2",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_OFF_TOWERSHIELD_UNDEAD",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        },
+        {
+         "@silver": "0",
+         "@time": "0.667",
+         "@craftingfocus": "1313",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL2",
+           "@enchantmentlevel": "2",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL2",
+           "@enchantmentlevel": "2",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_TOKEN_FAVOR_1",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        }
+       ],
+       "upgraderequirements": {
+        "upgraderesource": {
+         "@uniquename": "T4_SOUL",
+         "@count": "96"
+        }
+       }
+      },
+      {
+       "@enchantmentlevel": "3",
+       "@itempower": "1025",
+       "@durability": "36450",
+       "craftingrequirements": [
+        {
+         "@silver": "0",
+         "@time": "0.833",
+         "@craftingfocus": "2298",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL3",
+           "@enchantmentlevel": "3",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL3",
+           "@enchantmentlevel": "3",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_OFF_TOWERSHIELD_UNDEAD",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        },
+        {
+         "@silver": "0",
+         "@time": "0.833",
+         "@craftingfocus": "2298",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL3",
+           "@enchantmentlevel": "3",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL3",
+           "@enchantmentlevel": "3",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_TOKEN_FAVOR_1",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        }
+       ],
+       "upgraderequirements": {
+        "upgraderesource": {
+         "@uniquename": "T4_RELIC",
+         "@count": "96"
+        }
+       }
+      },
+      {
+       "@enchantmentlevel": "4",
+       "@itempower": "1125",
+       "@durability": "54675",
+       "craftingrequirements": [
+        {
+         "@silver": "0",
+         "@time": "1.25",
+         "@craftingfocus": "4021",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL4",
+           "@enchantmentlevel": "4",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL4",
+           "@enchantmentlevel": "4",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_OFF_TOWERSHIELD_UNDEAD",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        },
+        {
+         "@silver": "0",
+         "@time": "1.25",
+         "@craftingfocus": "4021",
+         "craftresource": [
+          {
+           "@uniquename": "T4_PLANKS_LEVEL4",
+           "@enchantmentlevel": "4",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_METALBAR_LEVEL4",
+           "@enchantmentlevel": "4",
+           "@count": "4"
+          },
+          {
+           "@uniquename": "T4_ARTEFACT_TOKEN_FAVOR_1",
+           "@count": "1",
+           "@maxreturnamount": "0"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ],
+  "mountskin": [
+   {
+    "@uniquename": "SKIN_HORSE_FOUNDER_ASIA_CRYSTAL",
+    "@prefabname": "MOUNT_HORSE_FOUNDER_ASIA_CRYSTAL_01",
+    "@prefabscaling": "1.6",
+    "@despawneffect": "FX/ClientPrefabs/demount_fx_medium",
+    "@despawneffectscaling": "1",
+    "@vfxAddonKeyword": "mount_horse",
+    "SocketPreset": {
+     "@name": "MOUNT_HORSE"
+    },
+    "AssetVfxPreset": {
+     "@name": "UNIQUE_MOUNT_HORSE_FOUNDER_ASIA_CRYSTAL"
+    },
+    "AudioInfo": {
+     "@name": "MOUNT_HORSE"
+    },
+    "FootStepVfxPreset": {
+     "@name": "MOUNT_HORSE"
+    }
+   }
+  ]
+ }
+}

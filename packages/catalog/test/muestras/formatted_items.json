@@ -1,0 +1,82 @@
+[
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_PLANKS",
+  "LocalizationDescriptionVariable": "@ITEMS_REFINED_RESOURCE_DESC",
+  "LocalizedNames": {
+   "EN-US": "Pine Planks",
+   "ES-ES": "Tablas de pino"
+  },
+  "Index": "1082",
+  "UniqueName": "T4_PLANKS"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_PLANKS_LEVEL1",
+  "LocalizationDescriptionVariable": "@ITEMS_REFINED_RESOURCE_DESC",
+  "LocalizedNames": {
+   "EN-US": "Uncommon Pine Planks",
+   "ES-ES": "Tablas de pino poco común"
+  },
+  "Index": "1087",
+  "UniqueName": "T4_PLANKS_LEVEL1@1"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_OFF_TOWERSHIELD_UNDEAD",
+  "LocalizationDescriptionVariable": "@ITEMS_T4_OFF_TOWERSHIELD_UNDEAD_DESC",
+  "LocalizedNames": {
+   "EN-US": "Adept's Sarcophagus",
+   "ES-ES": "Sarcófago del iniciado"
+  },
+  "Index": "2079",
+  "UniqueName": "T4_OFF_TOWERSHIELD_UNDEAD"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_2H_LONGBOW",
+  "LocalizationDescriptionVariable": "@ITEMS_T4_2H_LONGBOW_DESC",
+  "LocalizedNames": {
+   "EN-US": "Adept's Longbow",
+   "ES-ES": "Arco largo del iniciado"
+  },
+  "Index": "6426",
+  "UniqueName": "T4_2H_LONGBOW"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_2H_LONGBOW",
+  "LocalizationDescriptionVariable": "@ITEMS_T4_2H_LONGBOW_DESC",
+  "LocalizedNames": {
+   "EN-US": "Adept's Longbow",
+   "ES-ES": "Arco largo del iniciado"
+  },
+  "Index": "6427",
+  "UniqueName": "T4_2H_LONGBOW@1"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_2H_LONGBOW",
+  "LocalizationDescriptionVariable": "@ITEMS_T4_2H_LONGBOW_DESC",
+  "LocalizedNames": {
+   "EN-US": "Adept's Longbow",
+   "ES-ES": "Arco largo del iniciado"
+  },
+  "Index": "6428",
+  "UniqueName": "T4_2H_LONGBOW@2"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_2H_LONGBOW",
+  "LocalizationDescriptionVariable": "@ITEMS_T4_2H_LONGBOW_DESC",
+  "LocalizedNames": {
+   "EN-US": "Adept's Longbow",
+   "ES-ES": "Arco largo del iniciado"
+  },
+  "Index": "6429",
+  "UniqueName": "T4_2H_LONGBOW@3"
+ },
+ {
+  "LocalizationNameVariable": "@ITEMS_T4_2H_LONGBOW",
+  "LocalizationDescriptionVariable": "@ITEMS_T4_2H_LONGBOW_DESC",
+  "LocalizedNames": {
+   "EN-US": "Adept's Longbow",
+   "ES-ES": "Arco largo del iniciado"
+  },
+  "Index": "6430",
+  "UniqueName": "T4_2H_LONGBOW@4"
+ }
+]

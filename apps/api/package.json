@@ -1,0 +1,22 @@
+{
+  "name": "@gremio/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Worker de Cloudflare: API (Hono) y Cron que descarga precios a KV.",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "lista": "tsx scripts/generar-lista.ts",
+    "medir-cpu": "tsx scripts/medir-cpu.ts"
+  },
+  "devDependencies": {
+    "@gremio/catalog": "*",
+    "@cloudflare/workers-types": "^5.20261028.1",
+    "tsx": "^4.23.15",
+    "wrangler": "^4.154.0"
+  },
+  "dependencies": {
+    "hono": "^4.13.14"
+  }
+}

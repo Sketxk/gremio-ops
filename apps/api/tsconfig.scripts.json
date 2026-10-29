@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../node_modules/.tsc/api-scripts",
+    "types": ["node", "@cloudflare/workers-types"]
+  },
+  "include": ["scripts", "src", "lista-seguimiento.json"],
+  "references": [{ "path": "../../packages/catalog" }]
+}

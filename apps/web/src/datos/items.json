@@ -1,0 +1,1532 @@
+[
+ {
+  "id": "T1_WOOD",
+  "nombre": "Troncos en bruto",
+  "tier": 1,
+  "encantamiento": 0
+ },
+ {
+  "id": "T2_PLANKS",
+  "nombre": "Tablas de abedul",
+  "tier": 2,
+  "encantamiento": 0
+ },
+ {
+  "id": "T2_WOOD",
+  "nombre": "Troncos de abedul",
+  "tier": 2,
+  "encantamiento": 0
+ },
+ {
+  "id": "T3_PLANKS",
+  "nombre": "Tablas de castaño",
+  "tier": 3,
+  "encantamiento": 0
+ },
+ {
+  "id": "T3_WOOD",
+  "nombre": "Troncos de castaño",
+  "tier": 3,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_BOW",
+  "nombre": "Arco del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_BOW@1",
+  "nombre": "Arco del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_BOW@2",
+  "nombre": "Arco del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_BOW@3",
+  "nombre": "Arco del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_BOW@4",
+  "nombre": "Arco del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_BOW_AVALON",
+  "nombre": "Perforador de niebla del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_BOW_AVALON@1",
+  "nombre": "Perforador de niebla del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_BOW_AVALON@2",
+  "nombre": "Perforador de niebla del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_BOW_AVALON@3",
+  "nombre": "Perforador de niebla del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_BOW_AVALON@4",
+  "nombre": "Perforador de niebla del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_BOW_CRYSTAL",
+  "nombre": "Arco Cruzacielos del Iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_BOW_CRYSTAL@1",
+  "nombre": "Arco Cruzacielos del Iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_BOW_CRYSTAL@2",
+  "nombre": "Arco Cruzacielos del Iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_BOW_CRYSTAL@3",
+  "nombre": "Arco Cruzacielos del Iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_BOW_CRYSTAL@4",
+  "nombre": "Arco Cruzacielos del Iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_BOW_HELL",
+  "nombre": "Arco de lamentaciones del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_BOW_HELL@1",
+  "nombre": "Arco de lamentaciones del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_BOW_HELL@2",
+  "nombre": "Arco de lamentaciones del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_BOW_HELL@3",
+  "nombre": "Arco de lamentaciones del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_BOW_HELL@4",
+  "nombre": "Arco de lamentaciones del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_BOW_KEEPER",
+  "nombre": "Arco de Badon del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_BOW_KEEPER@1",
+  "nombre": "Arco de Badon del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_BOW_KEEPER@2",
+  "nombre": "Arco de Badon del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_BOW_KEEPER@3",
+  "nombre": "Arco de Badon del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_BOW_KEEPER@4",
+  "nombre": "Arco de Badon del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_LONGBOW",
+  "nombre": "Arco largo del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_LONGBOW@1",
+  "nombre": "Arco largo del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_LONGBOW@2",
+  "nombre": "Arco largo del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_LONGBOW@3",
+  "nombre": "Arco largo del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_LONGBOW@4",
+  "nombre": "Arco largo del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_LONGBOW_UNDEAD",
+  "nombre": "Arco susurrante del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_LONGBOW_UNDEAD@1",
+  "nombre": "Arco susurrante del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_LONGBOW_UNDEAD@2",
+  "nombre": "Arco susurrante del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_LONGBOW_UNDEAD@3",
+  "nombre": "Arco susurrante del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_LONGBOW_UNDEAD@4",
+  "nombre": "Arco susurrante del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_2H_WARBOW",
+  "nombre": "Arco de guerra del iniciado",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_2H_WARBOW@1",
+  "nombre": "Arco de guerra del iniciado",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_2H_WARBOW@2",
+  "nombre": "Arco de guerra del iniciado",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_2H_WARBOW@3",
+  "nombre": "Arco de guerra del iniciado",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_2H_WARBOW@4",
+  "nombre": "Arco de guerra del iniciado",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_PLANKS",
+  "nombre": "Tablas de pino",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_PLANKS_LEVEL1@1",
+  "nombre": "Tablas de pino poco común",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_PLANKS_LEVEL2@2",
+  "nombre": "Tablas de pino raro",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_PLANKS_LEVEL3@3",
+  "nombre": "Tablas de pino excepcional",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_PLANKS_LEVEL4@4",
+  "nombre": "Tablas de pino prístino",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T4_WOOD",
+  "nombre": "Troncos de pino",
+  "tier": 4,
+  "encantamiento": 0
+ },
+ {
+  "id": "T4_WOOD_LEVEL1@1",
+  "nombre": "Troncos de pino poco común",
+  "tier": 4,
+  "encantamiento": 1
+ },
+ {
+  "id": "T4_WOOD_LEVEL2@2",
+  "nombre": "Troncos de pino raro",
+  "tier": 4,
+  "encantamiento": 2
+ },
+ {
+  "id": "T4_WOOD_LEVEL3@3",
+  "nombre": "Troncos de pino excepcional",
+  "tier": 4,
+  "encantamiento": 3
+ },
+ {
+  "id": "T4_WOOD_LEVEL4@4",
+  "nombre": "Troncos de pino prístino",
+  "tier": 4,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_BOW",
+  "nombre": "Arco del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_BOW@1",
+  "nombre": "Arco del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_BOW@2",
+  "nombre": "Arco del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_BOW@3",
+  "nombre": "Arco del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_BOW@4",
+  "nombre": "Arco del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_BOW_AVALON",
+  "nombre": "Perforador de niebla del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_BOW_AVALON@1",
+  "nombre": "Perforador de niebla del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_BOW_AVALON@2",
+  "nombre": "Perforador de niebla del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_BOW_AVALON@3",
+  "nombre": "Perforador de niebla del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_BOW_AVALON@4",
+  "nombre": "Perforador de niebla del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_BOW_CRYSTAL",
+  "nombre": "Arco Cruzacielos del Experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_BOW_CRYSTAL@1",
+  "nombre": "Arco Cruzacielos del Experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_BOW_CRYSTAL@2",
+  "nombre": "Arco Cruzacielos del Experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_BOW_CRYSTAL@3",
+  "nombre": "Arco Cruzacielos del Experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_BOW_CRYSTAL@4",
+  "nombre": "Arco Cruzacielos del Experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_BOW_HELL",
+  "nombre": "Arco de lamentaciones del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_BOW_HELL@1",
+  "nombre": "Arco de lamentaciones del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_BOW_HELL@2",
+  "nombre": "Arco de lamentaciones del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_BOW_HELL@3",
+  "nombre": "Arco de lamentaciones del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_BOW_HELL@4",
+  "nombre": "Arco de lamentaciones del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_BOW_KEEPER",
+  "nombre": "Arco de Badon del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_BOW_KEEPER@1",
+  "nombre": "Arco de Badon del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_BOW_KEEPER@2",
+  "nombre": "Arco de Badon del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_BOW_KEEPER@3",
+  "nombre": "Arco de Badon del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_BOW_KEEPER@4",
+  "nombre": "Arco de Badon del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_LONGBOW",
+  "nombre": "Arco largo del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_LONGBOW@1",
+  "nombre": "Arco largo del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_LONGBOW@2",
+  "nombre": "Arco largo del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_LONGBOW@3",
+  "nombre": "Arco largo del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_LONGBOW@4",
+  "nombre": "Arco largo del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_LONGBOW_UNDEAD",
+  "nombre": "Arco susurrante del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_LONGBOW_UNDEAD@1",
+  "nombre": "Arco susurrante del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_LONGBOW_UNDEAD@2",
+  "nombre": "Arco susurrante del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_LONGBOW_UNDEAD@3",
+  "nombre": "Arco susurrante del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_LONGBOW_UNDEAD@4",
+  "nombre": "Arco susurrante del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_2H_WARBOW",
+  "nombre": "Arco de guerra del experto",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_2H_WARBOW@1",
+  "nombre": "Arco de guerra del experto",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_2H_WARBOW@2",
+  "nombre": "Arco de guerra del experto",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_2H_WARBOW@3",
+  "nombre": "Arco de guerra del experto",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_2H_WARBOW@4",
+  "nombre": "Arco de guerra del experto",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_PLANKS",
+  "nombre": "Tablas de cedro",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_PLANKS_LEVEL1@1",
+  "nombre": "Tablas de cedro poco común",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_PLANKS_LEVEL2@2",
+  "nombre": "Tablas de cedro raro",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_PLANKS_LEVEL3@3",
+  "nombre": "Tablas de cedro excepcional",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_PLANKS_LEVEL4@4",
+  "nombre": "Tablas de cedro prístino",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T5_WOOD",
+  "nombre": "Troncos de cedro",
+  "tier": 5,
+  "encantamiento": 0
+ },
+ {
+  "id": "T5_WOOD_LEVEL1@1",
+  "nombre": "Troncos de cedro poco común",
+  "tier": 5,
+  "encantamiento": 1
+ },
+ {
+  "id": "T5_WOOD_LEVEL2@2",
+  "nombre": "Troncos de cedro raro",
+  "tier": 5,
+  "encantamiento": 2
+ },
+ {
+  "id": "T5_WOOD_LEVEL3@3",
+  "nombre": "Troncos de cedro excepcional",
+  "tier": 5,
+  "encantamiento": 3
+ },
+ {
+  "id": "T5_WOOD_LEVEL4@4",
+  "nombre": "Troncos de cedro prístino",
+  "tier": 5,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_BOW",
+  "nombre": "Arco del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_BOW@1",
+  "nombre": "Arco del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_BOW@2",
+  "nombre": "Arco del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_BOW@3",
+  "nombre": "Arco del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_BOW@4",
+  "nombre": "Arco del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_BOW_AVALON",
+  "nombre": "Perforador de niebla del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_BOW_AVALON@1",
+  "nombre": "Perforador de niebla del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_BOW_AVALON@2",
+  "nombre": "Perforador de niebla del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_BOW_AVALON@3",
+  "nombre": "Perforador de niebla del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_BOW_AVALON@4",
+  "nombre": "Perforador de niebla del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_BOW_CRYSTAL",
+  "nombre": "Arco Cruzacielos del Maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_BOW_CRYSTAL@1",
+  "nombre": "Arco Cruzacielos del Maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_BOW_CRYSTAL@2",
+  "nombre": "Arco Cruzacielos del Maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_BOW_CRYSTAL@3",
+  "nombre": "Arco Cruzacielos del Maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_BOW_CRYSTAL@4",
+  "nombre": "Arco Cruzacielos del Maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_BOW_HELL",
+  "nombre": "Arco de lamentaciones del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_BOW_HELL@1",
+  "nombre": "Arco de lamentaciones del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_BOW_HELL@2",
+  "nombre": "Arco de lamentaciones del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_BOW_HELL@3",
+  "nombre": "Arco de lamentaciones del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_BOW_HELL@4",
+  "nombre": "Arco de lamentaciones del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_BOW_KEEPER",
+  "nombre": "Arco de Badon del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_BOW_KEEPER@1",
+  "nombre": "Arco de Badon del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_BOW_KEEPER@2",
+  "nombre": "Arco de Badon del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_BOW_KEEPER@3",
+  "nombre": "Arco de Badon del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_BOW_KEEPER@4",
+  "nombre": "Arco de Badon del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_LONGBOW",
+  "nombre": "Arco largo del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_LONGBOW@1",
+  "nombre": "Arco largo del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_LONGBOW@2",
+  "nombre": "Arco largo del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_LONGBOW@3",
+  "nombre": "Arco largo del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_LONGBOW@4",
+  "nombre": "Arco largo del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_LONGBOW_UNDEAD",
+  "nombre": "Arco susurrante del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_LONGBOW_UNDEAD@1",
+  "nombre": "Arco susurrante del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_LONGBOW_UNDEAD@2",
+  "nombre": "Arco susurrante del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_LONGBOW_UNDEAD@3",
+  "nombre": "Arco susurrante del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_LONGBOW_UNDEAD@4",
+  "nombre": "Arco susurrante del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_2H_WARBOW",
+  "nombre": "Arco de guerra del maestro",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_2H_WARBOW@1",
+  "nombre": "Arco de guerra del maestro",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_2H_WARBOW@2",
+  "nombre": "Arco de guerra del maestro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_2H_WARBOW@3",
+  "nombre": "Arco de guerra del maestro",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_2H_WARBOW@4",
+  "nombre": "Arco de guerra del maestro",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_PLANKS",
+  "nombre": "Tablas de roble rojo",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_PLANKS_LEVEL1@1",
+  "nombre": "Tablas de roble rojo poco común",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_PLANKS_LEVEL2@2",
+  "nombre": "Tablas de roble rojo raro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_PLANKS_LEVEL3@3",
+  "nombre": "Tablas de roble rojo excepcional",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_PLANKS_LEVEL4@4",
+  "nombre": "Tablas de roble rojo prístino",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T6_WOOD",
+  "nombre": "Troncos de roble rojo",
+  "tier": 6,
+  "encantamiento": 0
+ },
+ {
+  "id": "T6_WOOD_LEVEL1@1",
+  "nombre": "Troncos de roble rojo poco común",
+  "tier": 6,
+  "encantamiento": 1
+ },
+ {
+  "id": "T6_WOOD_LEVEL2@2",
+  "nombre": "Troncos de roble rojo raro",
+  "tier": 6,
+  "encantamiento": 2
+ },
+ {
+  "id": "T6_WOOD_LEVEL3@3",
+  "nombre": "Troncos de roble rojo excepcional",
+  "tier": 6,
+  "encantamiento": 3
+ },
+ {
+  "id": "T6_WOOD_LEVEL4@4",
+  "nombre": "Troncos de roble rojo prístino",
+  "tier": 6,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_BOW",
+  "nombre": "Arco del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_BOW@1",
+  "nombre": "Arco del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_BOW@2",
+  "nombre": "Arco del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_BOW@3",
+  "nombre": "Arco del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_BOW@4",
+  "nombre": "Arco del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_BOW_AVALON",
+  "nombre": "Perforador de niebla del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_BOW_AVALON@1",
+  "nombre": "Perforador de niebla del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_BOW_AVALON@2",
+  "nombre": "Perforador de niebla del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_BOW_AVALON@3",
+  "nombre": "Perforador de niebla del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_BOW_AVALON@4",
+  "nombre": "Perforador de niebla del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_BOW_CRYSTAL",
+  "nombre": "Arco Cruzacielos del Gran Maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_BOW_CRYSTAL@1",
+  "nombre": "Arco Cruzacielos del Gran Maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_BOW_CRYSTAL@2",
+  "nombre": "Arco Cruzacielos del Gran Maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_BOW_CRYSTAL@3",
+  "nombre": "Arco Cruzacielos del Gran Maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_BOW_CRYSTAL@4",
+  "nombre": "Arco Cruzacielos del Gran Maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_BOW_HELL",
+  "nombre": "Arco de lamentaciones del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_BOW_HELL@1",
+  "nombre": "Arco de lamentaciones del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_BOW_HELL@2",
+  "nombre": "Arco de lamentaciones del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_BOW_HELL@3",
+  "nombre": "Arco de lamentaciones del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_BOW_HELL@4",
+  "nombre": "Arco de lamentaciones del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_BOW_KEEPER",
+  "nombre": "Arco de Badon del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_BOW_KEEPER@1",
+  "nombre": "Arco de Badon del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_BOW_KEEPER@2",
+  "nombre": "Arco de Badon del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_BOW_KEEPER@3",
+  "nombre": "Arco de Badon del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_BOW_KEEPER@4",
+  "nombre": "Arco de Badon del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_LONGBOW",
+  "nombre": "Arco largo del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_LONGBOW@1",
+  "nombre": "Arco largo del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_LONGBOW@2",
+  "nombre": "Arco largo del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_LONGBOW@3",
+  "nombre": "Arco largo del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_LONGBOW@4",
+  "nombre": "Arco largo del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_LONGBOW_UNDEAD",
+  "nombre": "Arco susurrante del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_LONGBOW_UNDEAD@1",
+  "nombre": "Arco susurrante del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_LONGBOW_UNDEAD@2",
+  "nombre": "Arco susurrante del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_LONGBOW_UNDEAD@3",
+  "nombre": "Arco susurrante del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_LONGBOW_UNDEAD@4",
+  "nombre": "Arco susurrante del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_2H_WARBOW",
+  "nombre": "Arco de guerra del gran maestro",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_2H_WARBOW@1",
+  "nombre": "Arco de guerra del gran maestro",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_2H_WARBOW@2",
+  "nombre": "Arco de guerra del gran maestro",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_2H_WARBOW@3",
+  "nombre": "Arco de guerra del gran maestro",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_2H_WARBOW@4",
+  "nombre": "Arco de guerra del gran maestro",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_PLANKS",
+  "nombre": "Tablas de cortezaceniza",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_PLANKS_LEVEL1@1",
+  "nombre": "Tablas de cortezaceniza poco común",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_PLANKS_LEVEL2@2",
+  "nombre": "Tablas de cortezaceniza rara",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_PLANKS_LEVEL3@3",
+  "nombre": "Tablas de cortezaceniza excepcional",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_PLANKS_LEVEL4@4",
+  "nombre": "Tablas de cortezaceniza prístina",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T7_WOOD",
+  "nombre": "Troncos de cortezaceniza",
+  "tier": 7,
+  "encantamiento": 0
+ },
+ {
+  "id": "T7_WOOD_LEVEL1@1",
+  "nombre": "Troncos de cortezaceniza poco común",
+  "tier": 7,
+  "encantamiento": 1
+ },
+ {
+  "id": "T7_WOOD_LEVEL2@2",
+  "nombre": "Troncos de cortezaceniza rara",
+  "tier": 7,
+  "encantamiento": 2
+ },
+ {
+  "id": "T7_WOOD_LEVEL3@3",
+  "nombre": "Troncos de cortezaceniza excepcional",
+  "tier": 7,
+  "encantamiento": 3
+ },
+ {
+  "id": "T7_WOOD_LEVEL4@4",
+  "nombre": "Troncos de cortezaceniza prístina",
+  "tier": 7,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_BOW",
+  "nombre": "Arco del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_BOW@1",
+  "nombre": "Arco del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_BOW@2",
+  "nombre": "Arco del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_BOW@3",
+  "nombre": "Arco del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_BOW@4",
+  "nombre": "Arco del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_BOW_AVALON",
+  "nombre": "Perforador de niebla del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_BOW_AVALON@1",
+  "nombre": "Perforador de niebla del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_BOW_AVALON@2",
+  "nombre": "Perforador de niebla del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_BOW_AVALON@3",
+  "nombre": "Perforador de niebla del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_BOW_AVALON@4",
+  "nombre": "Perforador de niebla del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_BOW_CRYSTAL",
+  "nombre": "Arco Cruzacielos del Anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_BOW_CRYSTAL@1",
+  "nombre": "Arco Cruzacielos del Anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_BOW_CRYSTAL@2",
+  "nombre": "Arco Cruzacielos del Anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_BOW_CRYSTAL@3",
+  "nombre": "Arco Cruzacielos del Anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_BOW_CRYSTAL@4",
+  "nombre": "Arco Cruzacielos del Anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_BOW_HELL",
+  "nombre": "Arco de lamentaciones del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_BOW_HELL@1",
+  "nombre": "Arco de lamentaciones del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_BOW_HELL@2",
+  "nombre": "Arco de lamentaciones del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_BOW_HELL@3",
+  "nombre": "Arco de lamentaciones del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_BOW_HELL@4",
+  "nombre": "Arco de lamentaciones del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_BOW_KEEPER",
+  "nombre": "Arco de Badon del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_BOW_KEEPER@1",
+  "nombre": "Arco de Badon del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_BOW_KEEPER@2",
+  "nombre": "Arco de Badon del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_BOW_KEEPER@3",
+  "nombre": "Arco de Badon del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_BOW_KEEPER@4",
+  "nombre": "Arco de Badon del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_LONGBOW",
+  "nombre": "Arco largo del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_LONGBOW@1",
+  "nombre": "Arco largo del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_LONGBOW@2",
+  "nombre": "Arco largo del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_LONGBOW@3",
+  "nombre": "Arco largo del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_LONGBOW@4",
+  "nombre": "Arco largo del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_LONGBOW_UNDEAD",
+  "nombre": "Arco susurrante del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_LONGBOW_UNDEAD@1",
+  "nombre": "Arco susurrante del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_LONGBOW_UNDEAD@2",
+  "nombre": "Arco susurrante del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_LONGBOW_UNDEAD@3",
+  "nombre": "Arco susurrante del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_LONGBOW_UNDEAD@4",
+  "nombre": "Arco susurrante del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_2H_WARBOW",
+  "nombre": "Arco de guerra del anciano",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_2H_WARBOW@1",
+  "nombre": "Arco de guerra del anciano",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_2H_WARBOW@2",
+  "nombre": "Arco de guerra del anciano",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_2H_WARBOW@3",
+  "nombre": "Arco de guerra del anciano",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_2H_WARBOW@4",
+  "nombre": "Arco de guerra del anciano",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_PLANKS",
+  "nombre": "Tablas de maderablanca",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_PLANKS_LEVEL1@1",
+  "nombre": "Tablas de maderablanca poco común",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_PLANKS_LEVEL2@2",
+  "nombre": "Tablas de maderablanca rara",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_PLANKS_LEVEL3@3",
+  "nombre": "Tablas de maderablanca excepcional",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_PLANKS_LEVEL4@4",
+  "nombre": "Tablas de maderablanca prístina",
+  "tier": 8,
+  "encantamiento": 4
+ },
+ {
+  "id": "T8_WOOD",
+  "nombre": "Troncos de maderablanca",
+  "tier": 8,
+  "encantamiento": 0
+ },
+ {
+  "id": "T8_WOOD_LEVEL1@1",
+  "nombre": "Troncos de maderablanca poco común",
+  "tier": 8,
+  "encantamiento": 1
+ },
+ {
+  "id": "T8_WOOD_LEVEL2@2",
+  "nombre": "Troncos de maderablanca rara",
+  "tier": 8,
+  "encantamiento": 2
+ },
+ {
+  "id": "T8_WOOD_LEVEL3@3",
+  "nombre": "Troncos de maderablanca excepcional",
+  "tier": 8,
+  "encantamiento": 3
+ },
+ {
+  "id": "T8_WOOD_LEVEL4@4",
+  "nombre": "Troncos de maderablanca prístina",
+  "tier": 8,
+  "encantamiento": 4
+ }
+]

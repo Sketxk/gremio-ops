@@ -1,0 +1,28 @@
+{
+  "name": "@gremio/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend (React + Vite). Se sirve como archivos estáticos desde el Worker.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "items": "tsx scripts/generar-items.ts"
+  },
+  "devDependencies": {
+    "@gremio/catalog": "^0.0.0",
+    "@gremio/core": "^0.0.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "vite": "^8.3.5"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.105.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
