@@ -62,10 +62,13 @@ export const textos = {
     ciudad: 'Ciudad',
     venta: 'Venta',
     compra: 'Compra',
-    ayudaVenta: 'Venta: lo que pagas si compras al instante (orden de venta más barata).',
-    ayudaCompra: 'Compra: lo que te pagan si vendes al instante (orden de compra más alta).',
-    masBarato: 'Más barato',
-    mejorOferta: 'Mejor oferta',
+    ayudaVenta: 'Venta: lo que piden los que venden. Es lo que pagas si compras al instante.',
+    ayudaCompra:
+      'Compra: lo que ofrecen los que quieren comprar. Es lo que te pagan si vendes al instante.',
+    masBarato: 'Más barato reciente',
+    mejorOferta: 'Mejor oferta reciente',
+    notaEtiquetas:
+      'Las etiquetas solo comparan precios de menos de 6 horas. Un precio en rojo puede verse mejor, pero ya tiene rato y puede que esa orden ya no exista.',
     noEncontrado: 'Ese ítem no está en la lista que seguimos.',
     sinDatos:
       'Nadie ha visto este ítem en el mercado últimamente. Los precios los suben jugadores con el cliente del Albion Data Project; si nadie pasa por esa ciudad, no hay dato.',

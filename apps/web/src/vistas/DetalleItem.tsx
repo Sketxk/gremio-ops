@@ -77,20 +77,20 @@ export function DetalleItem({ id }: { id: string | null }) {
                         {nombreCiudad(ciudad)}
                       </TableCell>
                       <TableCell className="text-right align-top">
-                        <Precio punto={precio?.venta ?? null} className="items-end" />
-                        {resumen.masBarato?.ciudad === ciudad && (
-                          <Badge variant="secondary" className="mt-1">
-                            {t.masBarato}
-                          </Badge>
-                        )}
+                        <div className="flex flex-col items-end gap-1">
+                          <Precio punto={precio?.venta ?? null} className="items-end" />
+                          {resumen.masBarato?.ciudad === ciudad && (
+                            <Badge variant="secondary">{t.masBarato}</Badge>
+                          )}
+                        </div>
                       </TableCell>
                       <TableCell className="text-right align-top">
-                        <Precio punto={precio?.compra ?? null} className="items-end" />
-                        {resumen.mejorOferta?.ciudad === ciudad && (
-                          <Badge variant="secondary" className="mt-1">
-                            {t.mejorOferta}
-                          </Badge>
-                        )}
+                        <div className="flex flex-col items-end gap-1">
+                          <Precio punto={precio?.compra ?? null} className="items-end" />
+                          {resumen.mejorOferta?.ciudad === ciudad && (
+                            <Badge variant="secondary">{t.mejorOferta}</Badge>
+                          )}
+                        </div>
                       </TableCell>
                     </TableRow>
                   );
@@ -100,6 +100,7 @@ export function DetalleItem({ id }: { id: string | null }) {
           )}
 
           <div className="space-y-2 text-xs text-muted-foreground">
+            <p>{t.notaEtiquetas}</p>
             <p>{t.ayudaVenta}</p>
             <p>{t.ayudaCompra}</p>
             <LeyendaFrescura />
