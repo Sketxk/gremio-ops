@@ -1,0 +1,26 @@
+# GitHub pausa los workflows programados de un repo público tras 60 días sin actividad.
+# Cada semana este workflow vuelve a habilitar la descarga de precios (y a sí mismo) por la API de
+# GitHub, sin hacer commits, para que la app siga actualizándose aunque nadie toque el código.
+name: Mantener activa la descarga
+
+on:
+  schedule:
+    - cron: '23 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  reactivar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Habilitar workflows programados
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for wf in precios.yml mantener-activo.yml; do
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${wf}/enable"
+            echo "${wf}: habilitado"
+          done

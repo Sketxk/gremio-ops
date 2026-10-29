@@ -1,3 +1,5 @@
+import { useQuery } from '@tanstack/react-query';
+
 /** Forma del snapshot que sirve /api/precios (ver apps/api/src/snapshot.ts). */
 export interface Punto {
   precio: number;
@@ -25,4 +27,18 @@ export async function traerPrecios(): Promise<Snapshot> {
   if (res.status === 503) throw new SinSnapshot();
   if (!res.ok) throw new Error(`/api/precios respondió ${res.status}`);
   return (await res.json()) as Snapshot;
+}
+
+/** Un solo snapshot para toda la app; se vuelve a pedir cada minuto (el Worker lo cachea 60 s). */
+export function usePrecios() {
+  return useQuery({
+    queryKey: ['precios'],
+    queryFn: traerPrecios,
+    refetchInterval: 60_000,
+    retry: (intentos, error) => !(error instanceof SinSnapshot) && intentos < 2,
+  });
+}
+
+export function minutosDesde(fecha: string, ahora: Date): number {
+  return (ahora.getTime() - new Date(fecha).getTime()) / 60_000;
 }
