@@ -20,6 +20,22 @@ export interface Snapshot {
   precios: Record<string, Record<string, Record<string, PrecioCiudad>>>;
 }
 
+/** Resumen diario de ventas que sirve /api/volumen (ver apps/api/src/volumen.ts). */
+export interface Volumen {
+  ventasDia: number;
+  precioMediano: number;
+  diasConDato: number;
+}
+
+export interface SnapshotVolumen {
+  version: 1;
+  generado: string;
+  dias: number;
+  calidades: number[];
+  lotes: { total: number; fallidos: number };
+  volumen: Record<string, Record<string, Record<string, Volumen>>>;
+}
+
 export class SinSnapshot extends Error {}
 
 export async function traerPrecios(): Promise<Snapshot> {
@@ -36,6 +52,23 @@ export function usePrecios() {
     queryFn: traerPrecios,
     refetchInterval: 60_000,
     retry: (intentos, error) => !(error instanceof SinSnapshot) && intentos < 2,
+  });
+}
+
+/** Volumen de 7 días; null si todavía no hay (la app sigue funcionando y lo avisa). */
+export async function traerVolumen(): Promise<SnapshotVolumen | null> {
+  const res = await fetch('/api/volumen');
+  if (res.status === 503) return null;
+  if (!res.ok) throw new Error(`/api/volumen respondió ${res.status}`);
+  return (await res.json()) as SnapshotVolumen;
+}
+
+export function useVolumen() {
+  return useQuery({
+    queryKey: ['volumen'],
+    queryFn: traerVolumen,
+    staleTime: 30 * 60_000,
+    refetchInterval: 60 * 60_000,
   });
 }
 

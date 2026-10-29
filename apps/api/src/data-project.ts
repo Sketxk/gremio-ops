@@ -1,6 +1,6 @@
 /**
- * Cliente de la API del Albion Online Data Project. Solo lo usa el Cron; el navegador de los
- * miembros nunca la consulta directamente.
+ * Cliente de la API del Albion Online Data Project. Solo lo usa la descarga programada (GitHub
+ * Actions); el navegador de los miembros nunca la consulta directamente.
  */
 export const HOST = 'https://west.albion-online-data.com';
 export const USER_AGENT = 'gremio-ops (+https://github.com/Sketxk/gremio-ops)';
@@ -25,17 +25,22 @@ export interface Lote {
   ids: string[];
 }
 
+/** `prices`: precio actual por ciudad. `history`: ventas y precio promedio por día (`time-scale=24`). */
+export type Ruta = 'prices' | 'history';
+
 /** Reparte los IDs en URLs que no pasen de `MAX_URL` caracteres ni de `maxIds` ítems. */
 export function armarLotes(
   ids: readonly string[],
   ubicaciones: readonly string[],
   calidades: readonly number[],
   maxIds = Infinity,
+  ruta: Ruta = 'prices',
 ): Lote[] {
   const query =
     `?locations=${ubicaciones.map(encodeURIComponent).join(',')}` +
-    `&qualities=${calidades.join(',')}`;
-  const base = `${HOST}/api/v2/stats/prices/`;
+    `&qualities=${calidades.join(',')}` +
+    (ruta === 'history' ? '&time-scale=24' : '');
+  const base = `${HOST}/api/v2/stats/${ruta}/`;
   const largo = (lista: string[]) =>
     base.length + lista.map(encodeURIComponent).join(',').length + '.json'.length + query.length;
 
@@ -106,25 +111,59 @@ export function esperaPedida(headers: Headers, ahora: Date): number | null {
   return null;
 }
 
-function validarRespuesta(datos: unknown): RegistroApi[] {
-  if (!Array.isArray(datos)) throw new Error('La respuesta no es un arreglo');
-  const invalido = datos.find((r) => !esRegistro(r));
-  if (invalido !== undefined) {
-    throw new Error(`Registro con forma inesperada: ${JSON.stringify(invalido)}`);
-  }
-  return datos as RegistroApi[];
+/** Un registro tal como lo devuelve /api/v2/stats/history con `time-scale=24`. */
+export interface RegistroHistorial {
+  location: string;
+  item_id: string;
+  quality: number;
+  data: { item_count: number; avg_price: number; timestamp: string }[];
 }
+
+function esHistorial(valor: unknown): valor is RegistroHistorial {
+  if (typeof valor !== 'object' || valor === null) return false;
+  const r = valor as Record<string, unknown>;
+  return (
+    typeof r['location'] === 'string' &&
+    typeof r['item_id'] === 'string' &&
+    typeof r['quality'] === 'number' &&
+    Array.isArray(r['data']) &&
+    r['data'].every((d: unknown) => {
+      if (typeof d !== 'object' || d === null) return false;
+      const dia = d as Record<string, unknown>;
+      return (
+        typeof dia['item_count'] === 'number' &&
+        typeof dia['avg_price'] === 'number' &&
+        typeof dia['timestamp'] === 'string'
+      );
+    })
+  );
+}
+
+function validador<T>(esValido: (valor: unknown) => valor is T) {
+  return (datos: unknown): T[] => {
+    if (!Array.isArray(datos)) throw new Error('La respuesta no es un arreglo');
+    const invalido = datos.find((r) => !esValido(r));
+    if (invalido !== undefined) {
+      throw new Error(`Registro con forma inesperada: ${JSON.stringify(invalido).slice(0, 300)}`);
+    }
+    return datos as T[];
+  };
+}
+
+export const validarPrecios = validador(esRegistro);
+export const validarHistorial = validador(esHistorial);
 
 /**
  * Descarga un lote con espera progresiva (2 s, 4 s) ante 429, errores 5xx o de red, o lo que la API
  * pida esperar si lo dice. Otros errores (4xx, forma inesperada) no se reintentan.
  */
-export async function descargarLote(
+export async function descargarLote<T = RegistroApi>(
   lote: Lote,
   fetchFn: Fetch,
   esperar: Esperar,
   ahora: () => Date,
-): Promise<RegistroApi[]> {
+  validar: (datos: unknown) => T[] = validarPrecios as (datos: unknown) => T[],
+): Promise<T[]> {
   let ultimoError: unknown;
   for (let intento = 1; intento <= INTENTOS; intento++) {
     let espera = 1000 * 2 ** intento;
@@ -138,7 +177,7 @@ export async function descargarLote(
       if (intento < INTENTOS) await esperar(espera);
       continue;
     }
-    if (res.ok) return validarRespuesta(await res.json());
+    if (res.ok) return validar(await res.json());
     if (res.status !== 429 && res.status < 500) {
       throw new Error(`La API respondió ${res.status} ${res.statusText}`);
     }

@@ -11,6 +11,17 @@ export const COLOR_FRESCURA: Record<Frescura, string> = {
 };
 
 export const formato = new Intl.NumberFormat('es-MX');
+const enteros = new Intl.NumberFormat('es-MX', { maximumFractionDigits: 0 });
+const porciento = new Intl.NumberFormat('es-MX', { style: 'percent', maximumFractionDigits: 1 });
+
+/** Plata redondeada al entero para mostrarla; la cuenta interna no se redondea. */
+export function plata(n: number): string {
+  return enteros.format(n);
+}
+
+export function pct(fraccion: number): string {
+  return porciento.format(fraccion);
+}
 
 export function nombreCiudad(ubicacion: string): string {
   return textos.ciudades[ubicacion] ?? ubicacion;

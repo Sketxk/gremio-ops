@@ -56,6 +56,27 @@ for (const regla of REGLAS) {
   console.log(`${regla.motivo}: ${encontrados.length}`);
 }
 
+// Materiales de las recetas de lo anterior (artefactos, pescado, hierbas…): sin su precio, la
+// calculadora de crafteo no puede sacar el costo.
+const porId = new Map(catalogo.items.map((i) => [i.id, i]));
+const materiales = new Set<string>();
+for (const id of ids) {
+  for (const receta of porId.get(id)?.recetas ?? []) {
+    for (const m of receta.materiales) {
+      if (ids.has(m.id)) continue;
+      if (!porId.has(m.id)) throw new Error(`El material ${m.id} de ${id} no está en el catálogo`);
+      materiales.add(m.id);
+    }
+  }
+}
+for (const id of materiales) ids.add(id);
+grupos.push({
+  clave: 'materiales',
+  motivo: 'Materiales de esas recetas',
+  ids: [...materiales].sort(),
+});
+console.log(`Materiales de esas recetas: ${materiales.size}`);
+
 await writeFile(
   SALIDA,
   `${JSON.stringify({ catalogo: catalogo.fuente.sha, ids: [...ids].sort(), grupos }, null, 2)}\n`,

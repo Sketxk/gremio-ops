@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { CLAVE_SNAPSHOT } from './config.js';
+import { CLAVE_SNAPSHOT, CLAVE_VOLUMEN } from './config.js';
 
 export interface Entorno {
   PRECIOS: KVNamespace;
@@ -19,6 +19,18 @@ app.get('/api/precios', async (c) => {
   return c.body(snapshot, 200, {
     'Content-Type': 'application/json; charset=utf-8',
     'Cache-Control': 'public, max-age=60',
+  });
+});
+
+/** Resumen de ventas por día (apps/api/scripts/actualizar-volumen.ts, una vez al día). */
+app.get('/api/volumen', async (c) => {
+  const volumen = await c.env.PRECIOS.get(CLAVE_VOLUMEN, 'stream');
+  if (volumen === null) {
+    return c.json({ error: 'Todavía no hay datos de volumen.' }, 503);
+  }
+  return c.body(volumen, 200, {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'public, max-age=3600',
   });
 });
 

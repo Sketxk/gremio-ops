@@ -5,5 +5,6 @@
     "outDir": "../../node_modules/.tsc/api",
     "types": ["@cloudflare/workers-types"]
   },
-  "include": ["src", "test", "test/muestras/*.json", "lista-seguimiento.json"]
+  "include": ["src", "test", "test/muestras/*.json", "lista-seguimiento.json"],
+  "references": [{ "path": "../../packages/core" }]
 }

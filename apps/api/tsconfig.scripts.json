@@ -6,5 +6,5 @@
     "types": ["node", "@cloudflare/workers-types"]
   },
   "include": ["scripts", "src", "lista-seguimiento.json"],
-  "references": [{ "path": "../../packages/catalog" }]
+  "references": [{ "path": "../../packages/catalog" }, { "path": "../../packages/core" }]
 }

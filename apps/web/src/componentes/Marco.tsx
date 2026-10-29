@@ -21,8 +21,8 @@ const s = textos.menu.secciones;
 /** Secciones del menú. Las que no tienen ruta todavía se muestran como "Pronto". */
 export const SECCIONES: { titulo: string; icono: LucideIcon; ruta: string | null }[] = [
   { titulo: s.precios, icono: Coins, ruta: '/precios' },
-  { titulo: s.mercadoNegro, icono: Landmark, ruta: null },
-  { titulo: s.crafteo, icono: Hammer, ruta: null },
+  { titulo: s.mercadoNegro, icono: Landmark, ruta: '/mercado-negro' },
+  { titulo: s.crafteo, icono: Hammer, ruta: '/crafteo' },
   { titulo: s.bitacora, icono: NotebookPen, ruta: null },
   { titulo: s.aprende, icono: GraduationCap, ruta: null },
 ];

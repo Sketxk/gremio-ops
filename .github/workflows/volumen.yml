@@ -1,0 +1,36 @@
+# Una vez al día baja el historial de ventas de la lista de seguimiento y guarda en KV cuántas
+# unidades se venden por día en cada ciudad (mediana de 7 días). Con eso la app calcula cuántas
+# conviene comprar sin quedarse con mercancía que nadie compra.
+name: Volumen
+
+on:
+  schedule:
+    - cron: '40 10 * * *'
+  workflow_dispatch:
+
+# Nunca al mismo tiempo que la descarga de precios: la API bloquea si recibe consultas seguidas.
+concurrency:
+  group: precios
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Descargar historial y guardar volumen en KV
+        run: npm run volumen -w @gremio/api
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Mismo id que en apps/api/wrangler.jsonc (no es secreto).
+          KV_NAMESPACE_ID: 7caf9b437b524880aff6c838b204142c

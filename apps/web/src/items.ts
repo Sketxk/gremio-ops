@@ -2,9 +2,14 @@ import datos from './datos/items.json';
 import { indexar, type ItemBuscable } from './buscar';
 import { textos } from './textos/es';
 
+export interface ItemLista extends ItemBuscable {
+  /** Peso por unidad en kg; null si el catálogo no lo trae. */
+  peso: number | null;
+}
+
 /** Los ítems que vigila la descarga de precios, ordenados por nombre, tier y encantamiento. */
 const orden = new Intl.Collator('es-MX');
-export const ITEMS: readonly ItemBuscable[] = [...(datos as ItemBuscable[])].sort(
+export const ITEMS: readonly ItemLista[] = [...(datos as ItemLista[])].sort(
   (a, b) =>
     orden.compare(a.nombre ?? a.id, b.nombre ?? b.id) ||
     (a.tier ?? 0) - (b.tier ?? 0) ||
