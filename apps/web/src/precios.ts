@@ -14,7 +14,7 @@ export interface Snapshot {
   generado: string;
   ubicaciones: string[];
   calidades: number[];
-  porcion: { indice: number; total: number };
+  lotes: { total: number; fallidos: number };
   precios: Record<string, Record<string, Record<string, PrecioCiudad>>>;
 }
 

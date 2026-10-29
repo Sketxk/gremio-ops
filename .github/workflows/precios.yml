@@ -1,0 +1,36 @@
+# Descarga los precios de la lista de seguimiento y los guarda en KV de Cloudflare.
+# Respeta la API comunitaria: un solo proceso, User-Agent propio, pausa entre lotes y espera
+# progresiva ante errores (ver apps/api/src/data-project.ts).
+name: Precios
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+# Nunca dos descargas a la vez.
+concurrency:
+  group: precios
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Descargar precios y guardar en KV
+        run: npm run precios -w @gremio/api
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Mismo id que en apps/api/wrangler.jsonc (no es secreto).
+          KV_NAMESPACE_ID: 7caf9b437b524880aff6c838b204142c

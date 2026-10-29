@@ -7,14 +7,16 @@ export const textos = {
     titulo: 'Precios en vivo',
     subtitulo:
       'Página de prueba: 20 ítems con su precio en cada ciudad. Todavía no es el diseño final.',
-    actualizado: (hace: string) => `El Cron trajo estos precios ${hace}.`,
+    actualizado: (hace: string) => `Precios actualizados ${hace}.`,
     cargando: 'Trayendo precios…',
     error:
       'No pudimos traer los precios. Puede que el servidor esté despertando; recarga en un minuto.',
     sinSnapshot:
-      'Todavía no hay precios guardados. El Cron corre cada 5 minutos; vuelve en un ratito.',
-    cronAtrasado: (hace: string) =>
-      `Ojo: el Cron no ha actualizado desde ${hace}. Puede que la API de precios esté saturada; ves el último precio conocido con su antigüedad real.`,
+      'Todavía no hay precios guardados. Se actualizan cada 15 minutos; vuelve en un ratito.',
+    descargaAtrasada: (hace: string) =>
+      `Ojo: los precios no se actualizan desde ${hace}. Puede que la API de precios esté saturada; ves el último precio conocido con su antigüedad real.`,
+    lotesFallidos:
+      'Ojo: en la última actualización algunos ítems no se pudieron bajar; ves su último precio conocido con su antigüedad real.',
     columnaItem: 'Ítem',
     venta: 'Venta',
     compra: 'Compra',

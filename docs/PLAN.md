@@ -60,13 +60,13 @@ Miembros del gremio (navegador o celular)
 │  precios           (usuarios, bitácoras, gremio, histórico)
 │     ▲                ▲
 │     │                │ resumen cada 6 horas
-│  Cron cada 5 min ────┘
+│  GitHub Actions 15 min ┘
 │     │
 │     └──── pide precios ─────────────────────────────────────► API del Data Project
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-Flujo: el Cron descarga precios cada 5 minutos (una porción de la lista por corrida) a KV y guarda un resumen cada 6 horas en D1; la API sirve precios ya calculados desde KV y guarda bitácoras y datos del gremio en D1; Discord da el login y recibe las alertas; ao-bin-dumps alimenta el catálogo de ítems al construir el frontend.
+Flujo: GitHub Actions descarga precios cada 15 minutos a KV y guarda un resumen cada 6 horas en D1; la API sirve precios ya calculados desde KV y guarda bitácoras y datos del gremio en D1; Discord da el login y recibe las alertas; ao-bin-dumps alimenta el catálogo de ítems al construir el frontend.
 
 ## Stack tecnológico
 
@@ -82,7 +82,7 @@ Todo en TypeScript y todo dentro de Cloudflare, dentro del plan gratuito (ver Co
 | API | Hono en Cloudflare Workers | Endpoints propios: precios, cálculos, bitácora, gremio |
 | Base de datos | Cloudflare D1 + Drizzle ORM | Usuarios, bitácoras, pedidos, tesorería, histórico propio |
 | Caché de precios | Cloudflare KV | Último snapshot de precios |
-| Tareas programadas | Cron Triggers | Descargar precios cada 5 minutos por porciones, resumir cada 6 horas |
+| Tareas programadas | GitHub Actions y Cron Triggers | Descargar precios cada 15 minutos (Actions); resumir cada 6 horas |
 | Login | Discord OAuth2 | Solo entran miembros del servidor de Discord del gremio |
 | Alertas | Webhooks de Discord | Oportunidades publicadas en un canal |
 | Validación | Zod | Mismas reglas de datos en frontend y API |
@@ -102,7 +102,7 @@ La app completa cuesta 0 pesos al mes: plan gratuito de Cloudflare (sin tarjeta)
 | CPU por invocación (incluye Cron) | 10 ms | Cálculos pesados en el navegador; Cron en lotes pequeños |
 | Subpeticiones por invocación | 50 | Cada corrida del Cron descarga pocos lotes |
 | Cron Triggers | 5 por cuenta | Se usan 2 o 3 |
-| Escrituras en KV | 1,000 al día | Un solo snapshot por corrida: 288 escrituras al día |
+| Escrituras en KV | 1,000 al día | Un solo snapshot por corrida: 96 escrituras al día |
 | Lecturas en KV | 100,000 al día | Una lectura trae todos los precios |
 | Escrituras en D1 | 100,000 filas al día | Histórico: una fila por ítem cada 6 horas, todas las ciudades en JSON |
 | Lecturas en D1 | 5 millones de filas al día | Índices en toda consulta |
@@ -132,7 +132,7 @@ Fuentes: [límites de Workers](https://developers.cloudflare.com/workers/platfor
 
 Host para Américas: `https://west.albion-online-data.com`. Ubicaciones: Lymhurst, Fort Sterling, Thetford, Martlock, Bridgewatch, Caerleon, Brecilien y Black Market. Encantamientos con sufijo `@1` a `@4`. Límite de 4,096 caracteres por URL.
 
-**3. Estrategia de caché.** Cron cada 5 minutos → una porción de la lista de seguimiento (≤ 60 ítems, las porciones se turnan) → se mezcla con el snapshot anterior en KV. Cada 6 horas resumen en D1. Si la API falla, se muestra el último snapshot con su antigüedad. Peticiones con User-Agent propio y espera progresiva ante errores.
+**3. Estrategia de caché.** GitHub Actions cada 15 minutos → toda la lista de seguimiento en lotes con pausa → un snapshot en KV (el Cron del Worker no cupo en 10 ms de CPU). Cada 6 horas resumen en D1. Si la API falla, se muestra el último snapshot con su antigüedad. Peticiones con User-Agent propio y espera progresiva ante errores.
 
 **4. Calidad del dato.** Cada precio lleva antigüedad (verde < 1 h, amarillo 1–6 h, rojo > 6 h), volumen de 24 h y alerta de anomalía contra la mediana de 7 días.
 

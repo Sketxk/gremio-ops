@@ -30,8 +30,8 @@ const MUESTRA = [
   'T8_WOOD',
 ];
 
-/** El Cron corre cada 5 minutos; tres corridas sin actualizar ya es para avisar. */
-const MINUTOS_CRON_ATRASADO = 15;
+/** La descarga corre cada 15 minutos y GitHub a veces la retrasa; 45 min sin actualizar ya es para avisar. */
+const MINUTOS_DESCARGA_ATRASADA = 45;
 
 const porId = new Map(items.map((i) => [i.id, i]));
 const formato = new Intl.NumberFormat('es-MX');
@@ -95,10 +95,13 @@ export function App() {
           <p className="mb-2 text-sm text-zinc-400">
             {t.actualizado(textos.tiempo.hace(minutosDesde(consulta.data.generado, ahora)))}
           </p>
-          {minutosDesde(consulta.data.generado, ahora) > MINUTOS_CRON_ATRASADO && (
+          {minutosDesde(consulta.data.generado, ahora) > MINUTOS_DESCARGA_ATRASADA && (
             <p className="mb-2 text-sm text-amber-300">
-              {t.cronAtrasado(textos.tiempo.hace(minutosDesde(consulta.data.generado, ahora)))}
+              {t.descargaAtrasada(textos.tiempo.hace(minutosDesde(consulta.data.generado, ahora)))}
             </p>
+          )}
+          {consulta.data.lotes.fallidos > 0 && (
+            <p className="mb-2 text-sm text-amber-300">{t.lotesFallidos}</p>
           )}
           <div className="overflow-x-auto rounded-lg border border-zinc-800">
             <table className="w-full text-sm">

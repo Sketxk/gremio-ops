@@ -21,14 +21,14 @@ export interface Snapshot {
   generado: string;
   ubicaciones: string[];
   calidades: number[];
-  /** Porción de la lista que se actualizó en esta corrida (las porciones se turnan). */
-  porcion: Porcion;
+  /** Consultas de esta corrida; los ítems de las fallidas conservan su dato anterior. */
+  lotes: ResumenLotes;
   precios: TablaPrecios;
 }
 
-export interface Porcion {
-  indice: number;
+export interface ResumenLotes {
   total: number;
+  fallidos: number;
 }
 
 /**
@@ -56,13 +56,13 @@ export function tablaDesdeRegistros(registros: readonly RegistroApi[]): TablaPre
 export interface EntradaSnapshot {
   /** Lista de seguimiento actual: lo que no esté aquí se descarta. */
   ids: readonly string[];
-  /** IDs que se descargaron en esta corrida. */
+  /** IDs cuyas consultas salieron bien en esta corrida. */
   idsActualizados: ReadonlySet<string>;
   nuevos: TablaPrecios;
   anterior: Snapshot | null;
   ubicaciones: readonly string[];
   calidades: readonly number[];
-  porcion: Porcion;
+  lotes: ResumenLotes;
   ahora: Date;
 }
 
@@ -82,7 +82,7 @@ export function construirSnapshot(e: EntradaSnapshot): Snapshot {
     generado: e.ahora.toISOString(),
     ubicaciones: [...e.ubicaciones],
     calidades: [...e.calidades],
-    porcion: e.porcion,
+    lotes: e.lotes,
     precios,
   };
 }

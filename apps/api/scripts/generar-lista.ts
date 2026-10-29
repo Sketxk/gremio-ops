@@ -4,18 +4,29 @@ import { fileURLToPath } from 'node:url';
 import { CatalogoSchema, type Item } from '@gremio/catalog';
 
 /**
- * Qué vigila el Cron. Cada regla filtra el catálogo por sus categorías; para agregar algo, agrega
- * una regla y corre `npm run lista -w @gremio/api`.
+ * Qué se descarga cada 15 minutos. Cada regla filtra el catálogo por sus categorías; para agregar
+ * algo, agrega una regla y corre `npm run lista -w @gremio/api` y `npm run items -w @gremio/web`.
  */
+const t4 = (i: Item) => (i.tier ?? 0) >= 4;
 const REGLAS: { motivo: string; aplica: (i: Item) => boolean }[] = [
-  { motivo: 'Arcos T4+', aplica: (i) => i.subcategoria === 'bow' && (i.tier ?? 0) >= 4 },
+  { motivo: 'Arcos T4+', aplica: (i) => i.subcategoria === 'bow' && t4(i) },
   {
-    motivo: 'Tablas',
-    aplica: (i) => i.subcategoria === 'refinedresources' && i.subcategoria2 === 'planks',
+    motivo: 'Recursos en bruto y refinados',
+    aplica: (i) => i.subcategoria === 'resources' || i.subcategoria === 'refinedresources',
   },
   {
-    motivo: 'Troncos',
-    aplica: (i) => i.subcategoria === 'resources' && i.subcategoria2 === 'wood',
+    motivo: 'Armaduras de cuero T4+',
+    aplica: (i) =>
+      ['leather_armor', 'leather_helmet', 'leather_shoes'].includes(i.subcategoria ?? '') && t4(i),
+  },
+  {
+    motivo: 'Capas y bolsas T4+',
+    aplica: (i) => ['capes', 'bags'].includes(i.categoria ?? '') && t4(i),
+  },
+  {
+    motivo: 'Comida y pociones',
+    aplica: (i) =>
+      i.categoria === 'consumables' && ['food', 'potions'].includes(i.subcategoria ?? ''),
   },
 ];
 

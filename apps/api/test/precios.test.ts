@@ -1,14 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import lista from '../lista-seguimiento.json';
-import {
-  actualizarPrecios,
-  CLAVE_SNAPSHOT,
-  indicePorcion,
-  INTERVALO_CRON_MS,
-  lotesSeguimiento,
-  MAX_IDS_POR_LOTE,
-  type Entorno,
-} from '../src/cron.js';
+import { actualizarPrecios, type Almacen } from '../src/actualizar.js';
+import { PAUSA_ENTRE_LOTES_MS } from '../src/config.js';
 import {
   armarLotes,
   descargarLote,
@@ -34,10 +27,10 @@ describe('armarLotes', () => {
     expect(lotes.flatMap((l) => l.ids)).toEqual(lista.ids);
   });
 
-  it('respeta el máximo de ítems por lote', () => {
-    const porciones = lotesSeguimiento();
-    for (const lote of porciones) expect(lote.ids.length).toBeLessThanOrEqual(MAX_IDS_POR_LOTE);
-    expect(porciones.flatMap((l) => l.ids)).toEqual(lista.ids);
+  it('respeta el máximo de ítems por lote si se pide', () => {
+    const chicos = armarLotes(lista.ids, UBICACIONES, [1], 60);
+    for (const lote of chicos) expect(lote.ids.length).toBeLessThanOrEqual(60);
+    expect(chicos.flatMap((l) => l.ids)).toEqual(lista.ids);
   });
 
   it('pide las ubicaciones con el nombre exacto de la API', () => {
@@ -89,7 +82,7 @@ describe('construirSnapshot', () => {
     generado: '2026-10-28T07:00:00.000Z',
     ubicaciones: [...UBICACIONES],
     calidades: [1],
-    porcion: { indice: 0, total: 1 },
+    lotes: { total: 1, fallidos: 0 },
     precios: {
       T4_PLANKS: {
         '1': { Martlock: { venta: { precio: 1, fecha: '2026-10-28T06:00:00Z' }, compra: null } },
@@ -107,7 +100,7 @@ describe('construirSnapshot', () => {
     anterior,
     ubicaciones: UBICACIONES,
     calidades: [1],
-    porcion: { indice: 0, total: 2 },
+    lotes: { total: 2, fallidos: 1 },
     ahora: new Date('2026-10-28T08:10:00Z'),
   });
 
@@ -190,76 +183,70 @@ describe('descargarLote', () => {
 });
 
 describe('actualizarPrecios', () => {
-  function kvFalso() {
-    const datos = new Map<string, string>();
-    const kv = {
-      get: vi.fn(async (clave: string) => {
-        const valor = datos.get(clave);
-        return valor === undefined ? null : (JSON.parse(valor) as unknown);
+  function almacenFalso(inicial: Snapshot | null = null) {
+    let guardado = inicial;
+    const almacen = {
+      leer: vi.fn(async () => guardado),
+      guardar: vi.fn(async (s: Snapshot) => {
+        guardado = s;
       }),
-      put: vi.fn(async (clave: string, valor: string) => {
-        datos.set(clave, valor);
-      }),
-    };
-    return { kv, datos, env: { PRECIOS: kv as unknown as KVNamespace } satisfies Entorno };
+    } satisfies Almacen;
+    return { almacen, actual: () => guardado };
   }
-  const deps = (fetchFn: Fetch) => ({
-    fetch: fetchFn,
-    esperar: async () => {},
-    ahora: () => new Date('2026-10-28T08:10:00Z'),
-  });
+  const lotes = armarLotes(lista.ids, UBICACIONES, [1]);
 
-  const momento = (porcion: number) => new Date(porcion * INTERVALO_CRON_MS);
-  const lotes = lotesSeguimiento();
-
-  it('las porciones se turnan en orden según la hora programada', () => {
-    expect(lotes.length).toBeGreaterThan(1);
-    expect(lotes.map((_, i) => indicePorcion(momento(i), lotes.length))).toEqual(
-      lotes.map((_, i) => i),
-    );
-    expect(indicePorcion(momento(lotes.length), lotes.length)).toBe(0);
-  });
-
-  it('cada corrida pide una sola porción y escribe un solo snapshot', async () => {
-    const { kv, datos, env } = kvFalso();
+  it('baja todos los lotes con pausa entre ellos y escribe un solo snapshot', async () => {
+    const { almacen, actual } = almacenFalso();
     const fetchFn = vi.fn<Fetch>(async () => Response.json(registros));
-    await actualizarPrecios(env, deps(fetchFn), momento(0));
-    expect(fetchFn).toHaveBeenCalledTimes(1);
-    expect(fetchFn.mock.calls[0]?.[0]).toBe(lotes[0]?.url);
-    expect(kv.put).toHaveBeenCalledTimes(1);
-    const guardado = JSON.parse(datos.get(CLAVE_SNAPSHOT) ?? '{}') as Snapshot;
-    expect(guardado.porcion).toEqual({ indice: 0, total: lotes.length });
-    expect(guardado.precios['T4_2H_LONGBOW']?.['1']?.['Black Market']?.compra?.precio).toBe(3476);
+    const esperar = vi.fn(async () => {});
+    await actualizarPrecios({ fetch: fetchFn, esperar, ahora: () => new Date(), almacen });
+    expect(lotes.length).toBeGreaterThan(1);
+    expect(fetchFn.mock.calls.map((c) => c[0])).toEqual(lotes.map((l) => l.url));
+    expect(esperar.mock.calls).toEqual(lotes.slice(1).map(() => [PAUSA_ENTRE_LOTES_MS]));
+    expect(almacen.guardar).toHaveBeenCalledTimes(1);
+    expect(almacen.leer).not.toHaveBeenCalled();
+    expect(actual()?.lotes).toEqual({ total: lotes.length, fallidos: 0 });
+    expect(actual()?.precios['T4_2H_LONGBOW']?.['1']?.['Black Market']?.compra?.precio).toBe(3476);
   });
 
-  it('la siguiente porción conserva lo que trajo la anterior', async () => {
-    const { datos, env } = kvFalso();
-    await actualizarPrecios(
-      env,
-      deps(async () => Response.json(registros)),
-      momento(0),
-    );
-    await actualizarPrecios(
-      env,
-      deps(async () => Response.json([])),
-      momento(1),
-    );
-    const guardado = JSON.parse(datos.get(CLAVE_SNAPSHOT) ?? '{}') as Snapshot;
-    expect(guardado.porcion.indice).toBe(1);
-    // T4_2H_LONGBOW vino en la porción 0 y no se pierde al actualizar la 1.
-    expect(lotes[0]?.ids).toContain('T4_2H_LONGBOW');
-    expect(guardado.precios['T4_2H_LONGBOW']?.['1']?.['Black Market']?.compra?.precio).toBe(3476);
+  it('si un lote falla, sus ítems conservan el dato anterior', async () => {
+    const anterior = construirSnapshot({
+      ids: lista.ids,
+      idsActualizados: new Set(lista.ids),
+      nuevos: tablaDesdeRegistros(registros),
+      anterior: null,
+      ubicaciones: UBICACIONES,
+      calidades: [1],
+      lotes: { total: 1, fallidos: 0 },
+      ahora: new Date('2026-10-28T08:10:00Z'),
+    });
+    const { almacen, actual } = almacenFalso(anterior);
+    // Falla (sin reintento) solo el lote que trae el arco largo T4.
+    const fetchFn: Fetch = async (url) =>
+      url.includes('T4_2H_LONGBOW,') ? new Response('', { status: 404 }) : Response.json([]);
+    await actualizarPrecios({
+      fetch: fetchFn,
+      esperar: async () => {},
+      ahora: () => new Date(),
+      almacen,
+    });
+    expect(almacen.leer).toHaveBeenCalledTimes(1);
+    expect(actual()?.lotes).toEqual({ total: lotes.length, fallidos: 1 });
+    expect(actual()?.precios['T4_2H_LONGBOW']).toEqual(anterior.precios['T4_2H_LONGBOW']);
+    // Lo de lotes que sí respondieron (vacío) se reemplaza: T4_PLANKS ya no tiene dato.
+    expect(actual()?.precios['T4_PLANKS']).toBeUndefined();
   });
 
-  it('si la descarga falla no toca el snapshot anterior', async () => {
-    const { kv, env } = kvFalso();
+  it('si fallan todos los lotes no toca el snapshot anterior', async () => {
+    const { almacen } = almacenFalso();
     await expect(
-      actualizarPrecios(
-        env,
-        deps(async () => new Response('', { status: 500 })),
-        momento(0),
-      ),
-    ).rejects.toThrow(/falló tras 3 intentos/);
-    expect(kv.put).not.toHaveBeenCalled();
+      actualizarPrecios({
+        fetch: async () => new Response('', { status: 404 }),
+        esperar: async () => {},
+        ahora: () => new Date(),
+        almacen,
+      }),
+    ).rejects.toThrow(/se conserva el snapshot anterior/);
+    expect(almacen.guardar).not.toHaveBeenCalled();
   });
 });

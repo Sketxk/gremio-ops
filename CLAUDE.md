@@ -14,14 +14,15 @@ Este archivo lo lees al iniciar cada sesión. El detalle completo del producto e
 ## Estado actual (actualízalo al cerrar cada paso)
 
 - **Arranque: completo** (2026-10-28). Windows 11, Node 24 LTS, `gh` con la cuenta **Sketxk**; git firma como Sketxk solo en este repo. Cloudflare: cuenta del dueño (ver `CLAUDE.local.md`).
-- **Repo:** https://github.com/Sketxk/gremio-ops (privado, rama `main`).
-- **Worker:** `gremio-ops` en https://gremio-ops.gremio-api.workers.dev (subdominio `gremio-api` lo asignó Wrangler; el dueño puede cambiarlo). Sirve `apps/web/dist` como estáticos y `/api/*` con Hono. Cron `*/5 * * * *`: una porción de ≤ 60 ítems por corrida (con 255 ítems, 5 porciones: cada ítem se actualiza cada 25 min). CPU medido con `wrangler tail`: 2 lotes por corrida = 13 ms; porciones de 90 = 7–9 ms; se bajó a 60 para dejar margen (verificar).
+- **Repo:** https://github.com/Sketxk/gremio-ops (**público** desde 2026-10-29, rama `main`, historial limpio). El historial anterior está en el repo privado `gremio-ops-privado`; nunca lo subas al público.
+- **Worker:** `gremio-ops` en https://gremio-ops.gremio-api.workers.dev (subdominio `gremio-api` lo asignó Wrangler; el dueño puede cambiarlo). Sirve `apps/web/dist` como estáticos y `/api/*` con Hono (`/api/precios` devuelve el snapshot de KV como flujo, sin parsear). **Sin Cron.**
+- **Descarga de precios:** GitHub Actions (`.github/workflows/precios.yml`) cada 15 min corre `npm run precios -w @gremio/api`: baja los 2,063 ítems de la lista en ~12 lotes con 5 s de pausa y escribe un solo snapshot en KV por la API de Cloudflare (secretos del repo: `CLOUDFLARE_API_TOKEN` con permiso solo de Workers KV, `CLOUDFLARE_ACCOUNT_ID`). Se movió del Cron del Worker porque no cupo en 10 ms de CPU (medido: 13 ms con 2 lotes; 5–11 ms por porción de 60). Los workflows programados de repos públicos se pausan tras 60 días sin actividad en el repo.
 - **KV:** `gremio-ops-precios` (binding `PRECIOS`), clave `snapshot`.
 - **Despliegue:** Workers Builds conectado al repo. Cada push a `main` corre `npm run build` y `npx wrangler deploy --config apps/api/wrangler.jsonc`. A mano: `npm run deploy`.
-- **Comandos:** `npm run check` (tipos, lint, formato, pruebas) · `npm run generar -w @gremio/catalog` (catálogo y bonos tras un parche) · `npm run lista -w @gremio/api` y `npm run items -w @gremio/web` (tras cambiar la lista de seguimiento) · `npm run medir-cpu -w @gremio/api`.
+- **Comandos:** `npm run check` (tipos, lint, formato, pruebas) · `npm run generar -w @gremio/catalog` (catálogo y bonos tras un parche) · `npm run lista -w @gremio/api` y `npm run items -w @gremio/web` (tras cambiar la lista de seguimiento) · `npm run precios -w @gremio/api` (descarga a mano; requiere las variables de entorno del workflow).
 - **API del Data Project:** bloquea por minutos si recibe consultas seguidas (cabecera `ratelimit-reset`). No la consultes en ráfaga desde esta PC mientras pruebas.
-- **Fase 0: completa** (2026-10-29). Cron bajo 10 ms (7–9 ms con porciones de 90; ahora 60 para margen). Puerta: el dueño aceptó verificar las fórmulas con ejemplos publicados en guías de 2026 + constantes de ao-bin-dumps en lugar de casos propios (`packages/core/test/casos-publicados.test.ts`); capturas de su juego quedan como revisión opcional. Sin confirmar: tarifa de estación (la captura el usuario) y bono diario +10/+20% (solo en guías).
-- **Fase 1: en curso.**
+- **Fase 0: completa** (2026-10-29). Puerta: el dueño aceptó verificar las fórmulas con ejemplos publicados en guías de 2026 + constantes de ao-bin-dumps en lugar de casos propios (`packages/core/test/casos-publicados.test.ts`); capturas de su juego quedan como revisión opcional. Sin confirmar: tarifa de estación (la captura el usuario) y bono diario +10/+20% (solo en guías).
+- **Fase 1: en curso.** Lista de seguimiento (decidida con el dueño): arcos T4+, todos los recursos, armaduras de cuero T4+, capas y bolsas T4+, comida y pociones (2,063 ítems). Orden propuesto: base de la app + buscador → radar del Mercado Negro → calculadora de crafteo → D1 + login con Discord → bitácora.
 
 ## Primera sesión: arranque (haz esto en orden)
 
@@ -66,7 +67,7 @@ Cuando estos cuatro pasos estén listos, dile al dueño que el entorno quedó li
 4. **Solo mecánicas verificadas.** No implementar: "auto-respec" a 0.72 de plata por fama, intercambio de 12 corazones por 16, "flip desnudo" con peso cero, impuesto "del consorcio". Si una mecánica no está confirmada, pregúntale al dueño antes de programarla.
 5. **Costo cero.** Solo plan gratuito de Cloudflare, GitHub y servicios gratuitos. Nada que pida tarjeta, ningún servicio de pago, ninguna IA de pago, ningún dominio de paga.
 6. **Respetar los términos de Albion.** Nada que lea la memoria del juego, overlays sobre el cliente ni automatización de acciones dentro del juego.
-7. **Respetar la API comunitaria.** Solo el Cron consulta la API del Data Project, nunca el navegador del usuario. User-Agent propio, lotes de URL menores a 4,096 caracteres y espera progresiva ante errores.
+7. **Respetar la API comunitaria.** Solo la descarga programada (GitHub Actions) consulta la API del Data Project, nunca el navegador del usuario. User-Agent propio, lotes de URL menores a 4,096 caracteres y espera progresiva ante errores.
 8. **No saltar fases.** Cada fase tiene una puerta (ver `docs/PLAN.md`). No se empieza la siguiente sin cumplirla.
 
 ## Stack (fijo; no cambiarlo sin preguntar)
@@ -96,7 +97,7 @@ docs/           → PLAN.md y notas
 | CPU por invocación, Cron incluido | 10 ms | Cálculos pesados en el navegador; Cron en porciones pequeñas |
 | Subpeticiones por invocación | 50 | Pocos lotes por corrida |
 | Cron Triggers | 5 por cuenta | Usar 2 o 3 |
-| Escrituras KV | 1,000/día | Un solo snapshot por corrida (288/día: Cron cada 5 min, una porción por corrida) |
+| Escrituras KV | 1,000/día | Un solo snapshot por corrida (96/día: GitHub Actions cada 15 min) |
 | Lecturas KV | 100,000/día | Una lectura trae todos los precios |
 | Escrituras D1 | 100,000 filas/día | Histórico: una fila por ítem cada 6 h con todas las ciudades en JSON; cuidado, cada índice suma escrituras |
 | Lecturas D1 | 5 millones de filas/día | Índices en toda consulta |
@@ -136,5 +137,5 @@ Desde septiembre de 2026, D1 rechaza consultas al pasar el tope diario. Si el Cr
 - ~~Nombre definitivo de la app.~~ Decidido: **gremio-ops** (repo `Sketxk/gremio-ops`, subdominio gratuito de Cloudflare).
 - ID del servidor de Discord del gremio y roles (se necesita en la Fase 1).
 - Tamaño del gremio.
-- Categorías de ítems a seguir además de arcos.
+- ~~Categorías de ítems a seguir además de arcos.~~ Decidido (ver Estado actual).
 - ~~Ciudad de tablas, bono de arcos en Lymhurst y constantes de RRR~~: resueltos con datos del juego (`packages/catalog/bonos.json` y `gamedata.json`): Fort Sterling +40% madera, Lymhurst +15% arcos, base +18%, foco +59%. Fórmulas verificadas con guías publicadas (ver Estado actual).

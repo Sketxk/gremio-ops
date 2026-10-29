@@ -10,10 +10,10 @@
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"],
   },
-  // Cron de precios cada 5 minutos, una porción por corrida (288 escrituras a KV al día, límite
-  // gratuito: 1,000). Si cambias el intervalo, cambia también INTERVALO_CRON_MS en src/cron.ts.
+  // Sin Cron: el Worker no cupo en 10 ms de CPU al descargar precios. Los descarga GitHub Actions
+  // (.github/workflows/precios.yml) y los escribe en KV. La lista vacía borra el Cron anterior.
   "triggers": {
-    "crons": ["*/5 * * * *"],
+    "crons": [],
   },
   // Registra CPU y logs de cada invocación en el panel de Cloudflare (incluido en el plan gratuito).
   "observability": {
