@@ -1,8 +1,11 @@
 import { Hono } from 'hono';
 import { CLAVE_SNAPSHOT, CLAVE_VOLUMEN } from './config.js';
+import { despertarDescarga } from './despertador.js';
 
 export interface Entorno {
   PRECIOS: KVNamespace;
+  /** Token de GitHub (secreto del Worker) para lanzar la descarga; ver src/despertador.ts. */
+  GITHUB_TOKEN?: string;
 }
 
 const app = new Hono<{ Bindings: Entorno }>();
@@ -34,4 +37,15 @@ app.get('/api/volumen', async (c) => {
   });
 });
 
-export default app;
+export default {
+  fetch: app.fetch,
+  /** Cron cada 15 minutos: le pide a GitHub Actions que baje los precios. */
+  async scheduled(_evento, env) {
+    if (!env.GITHUB_TOKEN) {
+      throw new Error(
+        'Falta el secreto GITHUB_TOKEN del Worker; la descarga depende solo de GitHub',
+      );
+    }
+    await despertarDescarga(env.GITHUB_TOKEN, (url, init) => fetch(url, init));
+  },
+} satisfies ExportedHandler<Entorno>;

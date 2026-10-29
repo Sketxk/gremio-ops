@@ -10,10 +10,11 @@
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"],
   },
-  // Sin Cron: el Worker no cupo en 10 ms de CPU al descargar precios. Los descarga GitHub Actions
-  // (.github/workflows/precios.yml) y los escribe en KV. La lista vacía borra el Cron anterior.
+  // La descarga no cupo en 10 ms de CPU y la hace GitHub Actions (.github/workflows/precios.yml).
+  // Este Cron solo le pide a GitHub que la corra, porque su horario propio se retrasa o se salta
+  // (src/despertador.ts). Necesita el secreto GITHUB_TOKEN.
   "triggers": {
-    "crons": [],
+    "crons": ["*/15 * * * *"],
   },
   // Registra CPU y logs de cada invocación en el panel de Cloudflare (incluido en el plan gratuito).
   "observability": {

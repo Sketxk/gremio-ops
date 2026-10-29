@@ -23,6 +23,15 @@ export interface Dependencias {
   almacen: Almacen;
 }
 
+/** Si el snapshot tiene menos de esto, la corrida se salta (llegaron dos avisos casi juntos). */
+export const MINUTOS_MINIMOS_ENTRE_DESCARGAS = 10;
+
+export function snapshotReciente(anterior: Snapshot | null, ahora: Date): boolean {
+  if (!anterior) return false;
+  const minutos = (ahora.getTime() - Date.parse(anterior.generado)) / 60_000;
+  return minutos >= 0 && minutos < MINUTOS_MINIMOS_ENTRE_DESCARGAS;
+}
+
 /**
  * Baja toda la lista de seguimiento en lotes con pausa entre ellos y guarda un solo snapshot. Los
  * ítems de lotes fallidos conservan su dato anterior con su fecha real. Si fallan todos, no escribe.

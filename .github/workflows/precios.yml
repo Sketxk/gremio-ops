@@ -3,9 +3,11 @@
 # progresiva ante errores (ver apps/api/src/data-project.ts).
 name: Precios
 
+# Normalmente la lanza el Cron del Worker cada 15 minutos (apps/api/src/despertador.ts). El horario
+# propio queda de respaldo, en minutos con menos carga: GitHub retrasa o salta los de :00/:15/:30/:45.
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
 
 # Nunca dos descargas a la vez.
