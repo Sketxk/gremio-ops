@@ -15,7 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { LeyendaFrescura, Precio, nombreCiudad } from '@/componentes/Precio';
+import { ComoLeer, LeyendaFrescura, Precio, nombreCiudad } from '@/componentes/Precio';
 import { resumir } from '@/buscar';
 import { POR_ID, nivelItem, nombreItem } from '@/items';
 import { usePrecios } from '@/precios';
@@ -100,9 +100,7 @@ export function DetalleItem({ id }: { id: string | null }) {
           )}
 
           <div className="space-y-2 text-xs text-muted-foreground">
-            <p>{t.notaEtiquetas}</p>
-            <p>{t.ayudaVenta}</p>
-            <p>{t.ayudaCompra}</p>
+            <ComoLeer />
             <LeyendaFrescura />
             <p>{t.origen}</p>
           </div>

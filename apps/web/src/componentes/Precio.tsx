@@ -62,3 +62,17 @@ export function LeyendaFrescura() {
     </ul>
   );
 }
+
+/** Venta, compra y etiquetas explicadas en corto; va en Precios y en el detalle de cada ítem. */
+export function ComoLeer() {
+  const t = textos.comoLeer;
+  return (
+    <div className="space-y-1">
+      <p className="font-medium text-foreground">{t.titulo}</p>
+      <p>{t.venta}</p>
+      <p>{t.compra}</p>
+      <p>{t.diferencia}</p>
+      <p>{t.etiquetas}</p>
+    </div>
+  );
+}

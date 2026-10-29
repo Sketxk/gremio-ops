@@ -31,7 +31,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { AvisosPrecios } from '@/componentes/EstadoPrecios';
-import { LeyendaFrescura, Precio, formato } from '@/componentes/Precio';
+import { ComoLeer, LeyendaFrescura, Precio, formato } from '@/componentes/Precio';
 import { filtrar, interpretarBusqueda, resumir, type ItemBuscable, type Resumen } from '@/buscar';
 import { GRUPOS, INDICE, ITEMS, nivelItem, nombreItem } from '@/items';
 import { SinSnapshot, usePrecios } from '@/precios';
@@ -294,6 +294,7 @@ export function Precios({ parametros }: { parametros: URLSearchParams }) {
       )}
 
       <footer className="space-y-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <ComoLeer />
         <LeyendaFrescura />
         <p>{t.nota}</p>
       </footer>

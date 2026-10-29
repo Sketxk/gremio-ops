@@ -48,8 +48,10 @@ export const textos = {
       mercadoNegro: 'Mercado Negro paga',
     },
     ayudaColumnas: {
-      masBarato: 'La orden de venta más barata entre las ciudades: lo que pagas si compras ya.',
-      mejorOferta: 'La orden de compra más alta entre las ciudades: lo que te pagan si vendes ya.',
+      masBarato:
+        'Dónde te sale más barato comprar ya: el precio más bajo que piden los que venden.',
+      mejorOferta:
+        'Dónde te pagan más si vendes ya: lo más alto que ofrecen los que quieren comprar.',
       mercadoNegro: 'Lo que paga el Mercado Negro de Caerleon si le vendes ya.',
     },
     sinReciente: 'Sin precio reciente',
@@ -67,13 +69,22 @@ export const textos = {
       'Compra: lo que ofrecen los que quieren comprar. Es lo que te pagan si vendes al instante.',
     masBarato: 'Más barato reciente',
     mejorOferta: 'Mejor oferta reciente',
-    notaEtiquetas:
-      'Las etiquetas solo comparan precios de menos de 6 horas. Un precio en rojo puede verse mejor, pero ya tiene rato y puede que esa orden ya no exista.',
     noEncontrado: 'Ese ítem no está en la lista que seguimos.',
     sinDatos:
       'Nadie ha visto este ítem en el mercado últimamente. Los precios los suben jugadores con el cliente del Albion Data Project; si nadie pasa por esa ciudad, no hay dato.',
     origen:
       'Los precios los suben jugadores con el cliente del Albion Data Project. Una ciudad vacía significa que nadie la ha visto, no que valga cero.',
+  },
+  comoLeer: {
+    titulo: 'Cómo leer esto',
+    venta:
+      'Venta es la etiqueta del puesto: lo que piden los que venden. Si compras ya, pagas la más barata.',
+    compra:
+      'Compra es el letrero de "compro a tanto": lo que ofrecen los que quieren comprar. Si vendes ya, te pagan la más alta.',
+    diferencia:
+      'Por eso en la misma ciudad la venta casi siempre está más arriba que la compra: esa diferencia se la gana quien pone órdenes y espera.',
+    etiquetas:
+      '"Más barato" y "Mejor oferta" solo comparan precios de menos de 6 horas. Un precio en rojo puede verse mejor, pero ya tiene rato y es probable que alguien ya se haya llevado esa orden.',
   },
   frescura: {
     titulo: 'Qué significan los colores',
